@@ -8,27 +8,26 @@
   <link rel="canonical" href="https://lappduck4.github.io/">
   <link rel="icon" href="/favicon.ico">
 
-  <!-- Core SEO -->
-  <meta name="description" content="Lapp — Cyber Security Learner. Portfolio tập trung Web Security, Network Fundamentals, Linux và OSINT Ethical.">
-  <meta name="keywords" content="Lapp Cyber Security, Web Security, Network Fundamentals, Linux security, OSINT">
-  <meta name="robots" content="index,follow">
+  <!-- Basic SEO -->
+  <meta name="description" content="Lapp — Cyber Security Learner. Portfolio về Web Security, Network Fundamentals, Linux và OSINT Ethical.">
+  <meta name="robots" content="index, follow">
   <meta name="author" content="Lapp">
+  <meta name="keywords" content="Lapp, Cyber Security, Web Security, Network, Linux, OSINT, Ethical Hacking">
 
-  <!-- Open Graph / Twitter -->
+  <!-- OG -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Lapp — Cyber Security Learner">
-  <meta property="og:description" content="Portfolio: Web Security • Network • Linux • OSINT. Dự án lab & ghi chú kỹ thuật.">
+  <meta property="og:description" content="Portfolio: Web Security • Network • Linux • OSINT. Ghi chú và dự án lab.">
   <meta property="og:url" content="https://lappduck4.github.io/">
   <meta property="og:image" content="https://lappduck4.github.io/og-cover.png">
-  <meta name="twitter:card" content="summary_large_image">
 
-  <!-- Link to sitemap for crawlers -->
+  <!-- Sitemap -->
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
-  <!-- Strict minimal inline CSP (works if server doesn't override) -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; object-src 'none'; frame-ancestors 'none'; base-uri 'self';">
+  <!-- CSP -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; object-src 'none'; frame-ancestors 'none';">
 
-  <!-- Styles (light & compact) -->
+  <!-- Styles -->
   <style>
     :root{--bg:#071018;--card:#0c1318;--accent:#58a6ff;--muted:#9aa6b0;--text:#e6edf3;--r:12px; font-family:Inter,system-ui,Arial,sans-serif}
     body{margin:0;background:linear-gradient(180deg,#071018,#08121a);color:var(--text);line-height:1.6}
@@ -46,7 +45,7 @@
     .entity-note{margin-top:14px;color:var(--muted);font-size:14px}
   </style>
 
-  <!-- Structured Data: Person + WebSite + WebPage + Projects + SearchAction -->
+  <!-- 🔥 ENTITY SEO — CHUẨN NHẤT CHO GOOGLE -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -55,34 +54,46 @@
         "@type": "Person",
         "@id": "https://lappduck4.github.io/#person",
         "name": "Lapp",
-        "alternateName": ["Lapp Cyber Security","Lapp Cyber Security Learner"],
-        "description": "Cyber Security Learner, tập trung vào Web Security, Network Fundamentals, Linux và OSINT Ethical. Thực hành lab an toàn và chia sẻ ghi chú.",
+        "alternateName": ["Lapp Cyber Security", "Lapp Cyber Security Learner"],
         "jobTitle": "Cyber Security Learner",
+        "description": "Người học và thực hành Cyber Security theo hướng ethical. Tập trung Web Security, Network Fundamentals, Linux và OSINT Ethical.",
         "url": "https://lappduck4.github.io/",
+        "image": "https://lappduck4.github.io/og-cover.png",
         "sameAs": ["https://github.com/LappDuck4"],
-        "knowsAbout": ["Cyber Security","Web Security","Network Fundamentals","Linux","OSINT"]
+        "knowsAbout": [
+          "Cyber Security",
+          "Web Security",
+          "Network Fundamentals",
+          "Linux",
+          "OSINT"
+        ],
+        "inLanguage": "vi-VN"
       },
+
       {
         "@type": "WebSite",
         "@id": "https://lappduck4.github.io/#website",
         "url": "https://lappduck4.github.io/",
         "name": "Lapp — Cyber Security Learner",
-        "description": "Portfolio & projects của Lapp — Cyber Security Learner",
-        "publisher": {"@id":"https://lappduck4.github.io/#person"},
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://lappduck4.github.io/?s={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
+        "publisher": { "@id": "https://lappduck4.github.io/#person" },
+        "inLanguage": "vi-VN",
+        "description": "Portfolio và dự án lab của Lapp trong lĩnh vực Cyber Security."
       },
+
       {
         "@type": "WebPage",
         "@id": "https://lappduck4.github.io/#webpage",
         "url": "https://lappduck4.github.io/",
         "name": "Lapp — Portfolio",
-        "isPartOf": {"@id":"https://lappduck4.github.io/#website"},
-        "description": "Portfolio tối giản của Lapp — Web Security, Network, Linux, OSINT."
+        "description": "Portfolio Web Security, Network, Linux, OSINT của Lapp.",
+        "isPartOf": { "@id": "https://lappduck4.github.io/#website" },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://lappduck4.github.io/og-cover.png"
+        },
+        "inLanguage": "vi-VN"
       },
+
       {
         "@type": "ItemList",
         "@id": "https://lappduck4.github.io/#projects",
@@ -93,7 +104,6 @@
             "item": {
               "@type": "CreativeWork",
               "name": "HTTP Security Headers Checker",
-              "description": "Tool Python kiểm tra header bảo mật HTTP",
               "url": "https://github.com/LappDuck4"
             }
           },
@@ -103,7 +113,6 @@
             "item": {
               "@type": "CreativeWork",
               "name": "OWASP Juice Shop Notes",
-              "description": "Ghi chú và writeups cho OWASP Juice Shop",
               "url": "https://github.com/LappDuck4"
             }
           }
@@ -130,9 +139,9 @@
     <main>
       <section id="about" class="card">
         <h2>Giới thiệu</h2>
-        <p><strong>Lapp</strong> — người học và thực hành <strong>Cyber Security</strong> theo hướng ethical. Tập trung vào <strong>Web Security</strong>, <strong>Network Fundamentals</strong> và <strong>OSINT</strong>. Website này là portfolio chính thức, nơi chứa ghi chú và dự án lab an toàn.</p>
-        <!-- Entity reinforcement text (quan trọng) -->
-        <p class="entity-note">Website này thuộc về <strong>Lapp</strong> — Cyber Security Learner, chuyên về Web Security, Network Fundamentals và OSINT Ethical.</p>
+        <p><strong>Lapp</strong> là người học và thực hành <strong>Cyber Security</strong> theo hướng ethical. Tập trung vào <strong>Web Security</strong>, <strong>Network Fundamentals</strong>, <strong>Linux</strong> và <strong>OSINT</strong>.</p>
+
+        <p class="entity-note">Website này là portfolio chính thức của <strong>Lapp</strong> — Cyber Security Learner.</p>
       </section>
 
       <section id="skills" class="card">
@@ -140,40 +149,26 @@
         <ul>
           <li>Web Security Fundamentals (XSS, CSRF, input validation)</li>
           <li>Network Fundamentals (TCP/IP, OSI, subnetting)</li>
-          <li>Linux & System (permissions, users, shell)</li>
-          <li>OSINT Ethical (thu thập thông tin công khai đúng chuẩn)</li>
+          <li>Linux (permissions, users, shell)</li>
+          <li>OSINT Ethical</li>
         </ul>
       </section>
 
       <section id="projects" class="card">
         <h2>Dự án</h2>
         <ul>
-          <li>HTTP Security Headers Checker (Python) — <a href="https://github.com/LappDuck4" rel="noopener">Xem trên GitHub</a></li>
-          <li>OWASP Juice Shop Notes / Writeups — <a href="https://github.com/LappDuck4" rel="noopener">Xem trên GitHub</a></li>
+          <li>HTTP Security Headers Checker (Python) — <a href="https://github.com/LappDuck4" rel="noopener">GitHub</a></li>
+          <li>OWASP Juice Shop Notes — <a href="https://github.com/LappDuck4" rel="noopener">GitHub</a></li>
         </ul>
       </section>
 
       <section id="contact" class="card">
-        <h2>Liên hệ (an toàn)</h2>
+        <h2>Liên hệ</h2>
         <p>GitHub chính thức: <a href="https://github.com/LappDuck4" rel="noopener">github.com/LappDuck4</a></p>
       </section>
     </main>
 
-    <footer>
-      © 2025 — Lapp • Minimal & Secure Portfolio
-    </footer>
+    <footer>© 2025 — Lapp • Minimal & Secure Portfolio</footer>
   </div>
-
-  <!-- Additional inline Entity-LD (optional, reinforced) -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Person",
-    "@id":"https://lappduck4.github.io/#person",
-    "name":"Lapp",
-    "url":"https://lappduck4.github.io/",
-    "sameAs":["https://github.com/LappDuck4"]
-  }
-  </script>
 </body>
 </html>

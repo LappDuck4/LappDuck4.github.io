@@ -4,123 +4,168 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Lapp — Cyber Security Learner</title>
+  <title>Lapp — Cyber Security Learner & Blog</title>
 
-  <!-- SEO tối giản -->
-  <meta name="description" content="Cyber Security Learner — Web Security, Network, Linux, OSINT.">
+  <!-- SEO nâng cao -->
+  <meta name="description" content="Blog & Portfolio của Lapp — Cyber Security Learner. Chia sẻ kiến thức Web Security, Network, Linux, OSINT và các dự án học tập.">
+  <meta name="keywords" content="cyber security, an toàn thông tin, web security, network, linux, osint, cybersecurity blog">
+  <meta name="author" content="Lapp">
   <link rel="canonical" href="https://lappduck4.github.io/">
   <meta name="robots" content="index, follow">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Lapp — Cyber Security Learner">
-  <meta property="og:description" content="Cyber Security Learner — Skills • Projects • GitHub">
+  <meta property="og:title" content="Lapp — Cyber Security Learner & Blog">
+  <meta property="og:description" content="Cyber Security Blog • Dự án • Mục tiêu • Kỹ năng • OSINT Ethical.">
   <meta property="og:url" content="https://lappduck4.github.io/">
   <meta property="og:type" content="website">
 
-  <!-- Security Headers (chỉ hoạt động nếu server cho phép) -->
+  <!-- Schema.org JSON-LD (SEO mạnh) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Lapp",
+    "url": "https://lappduck4.github.io/",
+    "jobTitle": "Cyber Security Learner",
+    "sameAs": [
+      "https://github.com/LappDuck4"
+    ]
+  }
+  </script>
+
+  <!-- Security Headers -->
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; object-src 'none'; base-uri 'self'; frame-ancestors 'none';">
-  <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
   <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
 
   <style>
     :root {
-      --bg: #05090d;
-      --bg2: #0a1116;
-      --card: rgba(255,255,255,0.03);
-      --border: rgba(255,255,255,0.05);
-      --accent: #68a8ff;
-      --muted: #9ba3ad;
-      --radius: 14px;
-      --maxw: 860px;
+      --bg:#05090d;
+      --bg2:#0a131b;
+      --card:rgba(255,255,255,0.03);
+      --border:rgba(255,255,255,0.05);
+      --accent:#68a8ff;
+      --muted:#9ba3ad;
+      --radius:14px;
+      --maxw:860px;
       font-family: Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
       color-scheme: dark;
     }
 
     body {
-      margin: 0;
-      background: linear-gradient(180deg, var(--bg), var(--bg2));
-      color: #e8eef5;
+      margin:0;
+      background:linear-gradient(180deg,var(--bg),var(--bg2));
+      color:#e8eef5;
     }
 
     .wrap {
-      max-width: var(--maxw);
-      margin: auto;
-      padding: 32px 20px 40px;
+      max-width:var(--maxw);
+      margin:auto;
+      padding:36px 20px 48px;
     }
 
     header {
-      padding: 28px;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      background: var(--card);
-      backdrop-filter: blur(8px);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.4);
-      text-align: center;
+      text-align:center;
+      padding:30px 24px;
+      border-radius:var(--radius);
+      border:1px solid var(--border);
+      background:var(--card);
+      box-shadow:0 8px 30px rgba(0,0,0,0.4);
+      backdrop-filter:blur(10px);
     }
 
     h1 {
-      margin: 0;
-      font-size: 32px;
-      font-weight: 700;
+      margin:0;
+      font-size:34px;
+      font-weight:700;
     }
 
     .lead {
-      margin-top: 6px;
-      font-size: 16px;
-      color: var(--muted);
+      margin-top:6px;
+      font-size:16px;
+      color:var(--muted);
+    }
+
+    nav {
+      margin-top:18px;
+      display:flex;
+      gap:18px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+
+    nav a {
+      color:var(--accent);
+      text-decoration:none;
+      font-size:15px;
+    }
+
+    nav a:hover {
+      text-decoration:underline;
     }
 
     main {
-      margin-top: 28px;
-      display: grid;
-      gap: 22px;
+      margin-top:32px;
+      display:grid;
+      gap:24px;
     }
 
     .card {
-      padding: 22px 24px;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      background: var(--card);
-      backdrop-filter: blur(6px);
-      transition: 0.22s ease;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.28);
+      padding:24px 26px;
+      border-radius:var(--radius);
+      border:1px solid var(--border);
+      background:var(--card);
+      backdrop-filter:blur(6px);
+      transition:0.22s ease;
+      box-shadow:0 6px 20px rgba(0,0,0,0.28);
     }
 
     .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 28px rgba(0,0,0,0.45);
+      transform:translateY(-5px);
+      box-shadow:0 10px 30px rgba(0,0,0,0.45);
     }
 
     h2 {
-      margin: 0 0 12px 0;
-      font-size: 20px;
-      color: var(--accent);
+      margin:0 0 12px 0;
+      font-size:21px;
+      color:var(--accent);
     }
 
     ul {
-      margin: 0;
-      padding-left: 18px;
-      color: var(--muted);
-      line-height: 1.55;
+      margin:0;
+      padding-left:18px;
+      color:var(--muted);
+      line-height:1.55;
     }
 
-    a {
-      color: var(--accent);
-      text-decoration: none;
+    .blog-preview {
+      margin-top:10px;
+      padding-left:0;
+      list-style:none;
     }
 
-    a:hover {
-      text-decoration: underline;
+    .blog-preview li a {
+      color:#e8eef5;
+      text-decoration:none;
+      display:block;
+      padding:10px 0;
+      border-bottom:1px solid rgba(255,255,255,0.06);
+      transition:0.2s;
+    }
+
+    .blog-preview li a:hover {
+      color:var(--accent);
+      transform:translateX(3px);
     }
 
     footer {
-      margin-top: 32px;
-      text-align: center;
-      font-size: 13px;
-      color: var(--muted);
-      opacity: 0.75;
+      margin-top:40px;
+      text-align:center;
+      font-size:13px;
+      color:var(--muted);
+      opacity:0.75;
     }
   </style>
 </head>
@@ -131,23 +176,38 @@
     <header>
       <h1>Lapp</h1>
       <p class="lead">Cyber Security Learner — Web Security • Network • Linux • OSINT</p>
+
+      <nav>
+        <a href="#about">Giới thiệu</a>
+        <a href="#skills">Kỹ năng</a>
+        <a href="#projects">Dự án</a>
+        <a href="#goals">Mục tiêu</a>
+        <a href="#blog">Blog</a>
+        <a href="#social">Social</a>
+      </nav>
     </header>
 
     <main>
 
-      <section class="card">
+      <section id="about" class="card">
+        <h2>Giới thiệu</h2>
+        <p>Mình là <strong>Lapp</strong> — người học và thực hành Cyber Security theo hướng Ethical, tập trung vào Web Security, Network, Linux và OSINT.  
+        Mục tiêu: xây dựng nền tảng ATTT vững chắc và chia sẻ kiến thức qua blog để giúp người mới dễ tiếp cận hơn.</p>
+      </section>
+
+      <section id="skills" class="card">
         <h2>Kỹ năng</h2>
         <ul>
-          <li>Web Security Fundamentals (XSS, CSRF awareness, input validation)</li>
-          <li>Network Fundamentals (TCP/IP, OSI, subnetting cơ bản)</li>
-          <li>Linux & System Basics (permissions, users, shell)</li>
-          <li>OSINT Ethical (thu thập thông tin công khai đúng chuẩn)</li>
-          <li>Safe Practice: Labs, VMs, no unauthorized testing</li>
+          <li>Web Security Fundamentals (XSS, CSRF, input validation)</li>
+          <li>Network Fundamentals: TCP/IP, OSI, subnetting</li>
+          <li>Linux & System: permissions, users, shell</li>
+          <li>OSINT Ethical: thu thập thông tin công khai đúng chuẩn</li>
+          <li>Safe Practice: sử dụng lab riêng, VM, không thử nghiệm trái phép</li>
         </ul>
       </section>
 
-      <section class="card">
-        <h2>Dự án đã làm</h2>
+      <section id="projects" class="card">
+        <h2>Dự án</h2>
         <ul>
           <li>HTTP Security Headers Checker (Python)</li>
           <li>OWASP Juice Shop Notes / Writeups</li>
@@ -155,8 +215,28 @@
         </ul>
       </section>
 
-      <section class="card">
-        <h2>Liên hệ</h2>
+      <section id="goals" class="card">
+        <h2>Mục tiêu</h2>
+        <ul>
+          <li>Hoàn thiện kiến thức Web Security nâng cao</li>
+          <li>Học OSINT nâng cao và xây dựng tool nhỏ</li>
+          <li>Thực hiện các lab phòng thủ (Blue Team / DFIR basic)</li>
+          <li>Xây dựng blog chia sẻ kiến thức Cyber Security</li>
+        </ul>
+      </section>
+
+      <section id="blog" class="card">
+        <h2>Blog</h2>
+        <ul class="blog-preview">
+          <li><a href="#">• 5 điều cơ bản cần biết trước khi học Web Security</a></li>
+          <li><a href="#">• Cách kiểm tra HTTP Security Headers (giải thích đơn giản)</a></li>
+          <li><a href="#">• OSINT: Thu thập thông tin an toàn & có đạo đức</a></li>
+        </ul>
+        <p style="margin-top:12px;color:var(--muted);">(* Bạn có thể tạo folder <code>/blog</code> và thêm bài viết sau *)</p>
+      </section>
+
+      <section id="social" class="card">
+        <h2>Social / Nickname</h2>
         <p>GitHub duy nhất:</p>
         <p><a href="https://github.com/LappDuck4" target="_blank" rel="noopener noreferrer">github.com/LappDuck4</a></p>
       </section>
@@ -164,7 +244,7 @@
     </main>
 
     <footer>
-      © 2025 — Minimal & Secure Portfolio
+      © 2025 — Lapp • Minimal & Secure Blog/Portfolio
     </footer>
 
   </div>

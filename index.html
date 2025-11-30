@@ -1,252 +1,167 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Lapp — Cyber Security Learner & Blog</title>
+    <title>Lapp – Cyber Security Learner (Portfolio)</title>
 
-  <!-- SEO nâng cao -->
-  <meta name="description" content="Blog & Portfolio của Lapp — Cyber Security Learner. Chia sẻ kiến thức Web Security, Network, Linux, OSINT và các dự án học tập.">
-  <meta name="keywords" content="cyber security, an toàn thông tin, web security, network, linux, osint, cybersecurity blog">
-  <meta name="author" content="Lapp">
-  <link rel="canonical" href="https://lappduck4.github.io/">
-  <meta name="robots" content="index, follow">
+    <!-- Canonical -->
+    <link rel="canonical" href="https://lappduck4.github.io/">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Lapp — Cyber Security Learner & Blog">
-  <meta property="og:description" content="Cyber Security Blog • Dự án • Mục tiêu • Kỹ năng • OSINT Ethical.">
-  <meta property="og:url" content="https://lappduck4.github.io/">
-  <meta property="og:type" content="website">
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-  <!-- Schema.org JSON-LD (SEO mạnh) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Lapp",
-    "url": "https://lappduck4.github.io/",
-    "jobTitle": "Cyber Security Learner",
-    "sameAs": [
-      "https://github.com/LappDuck4"
-    ]
-  }
-  </script>
+    <!-- SEO META – Không tiết lộ thông tin cá nhân -->
+    <meta name="description" content="Lapp – Cyber Security Learner. Kỹ năng bảo mật web, network cơ bản và các dự án lab an toàn. Portfolio tối giản & sạch.">
+    <meta name="keywords" content="Cyber Security, Web Security, Network Security, Pentesting Basic, Ethical Security, Lab Security Projects">
+    <meta name="author" content="Lapp">
+    <meta name="robots" content="index, follow">
 
-  <!-- Security Headers -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; object-src 'none'; base-uri 'self'; frame-ancestors 'none';">
-  <meta http-equiv="X-Frame-Options" content="DENY">
-  <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Lapp – Cyber Security Learner">
+    <meta property="og:description" content="Portfolio & kỹ năng Cyber Security. Dự án lab và ghi chú bảo mật.">
+    <meta property="og:url" content="https://lappduck4.github.io/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://lappduck4.github.io/og-cover.png">
 
-  <style>
-    :root {
-      --bg:#05090d;
-      --bg2:#0a131b;
-      --card:rgba(255,255,255,0.03);
-      --border:rgba(255,255,255,0.05);
-      --accent:#68a8ff;
-      --muted:#9ba3ad;
-      --radius:14px;
-      --maxw:860px;
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
-      color-scheme: dark;
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Lapp – Cyber Security Learner">
+    <meta name="twitter:description" content="Web Security • Network • Lab Projects">
+
+    <!-- Structured Data (SEO Schema – không lộ info cá nhân) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Lapp",
+      "description": "Cyber Security Learner • Web Security • Network • Ethical Learning",
+      "url": "https://lappduck4.github.io/",
+      "sameAs": [
+        "https://github.com/LappDuck4"
+      ]
     }
+    </script>
 
-    body {
-      margin:0;
-      background:linear-gradient(180deg,var(--bg),var(--bg2));
-      color:#e8eef5;
-    }
+    <!-- Security Headers (có tác dụng khi server hỗ trợ) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; object-src 'none'; base-uri 'self'; frame-ancestors 'none';">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
 
-    .wrap {
-      max-width:var(--maxw);
-      margin:auto;
-      padding:36px 20px 48px;
-    }
+    <!-- CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #0d1117;
+            color: #e6edf3;
+            line-height: 1.6;
+        }
 
-    header {
-      text-align:center;
-      padding:30px 24px;
-      border-radius:var(--radius);
-      border:1px solid var(--border);
-      background:var(--card);
-      box-shadow:0 8px 30px rgba(0,0,0,0.4);
-      backdrop-filter:blur(10px);
-    }
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background: #161b22;
+            border-bottom: 1px solid #30363d;
+        }
 
-    h1 {
-      margin:0;
-      font-size:34px;
-      font-weight:700;
-    }
+        h1 { margin: 0; font-size: 32px; }
+        h2 { color: #58a6ff; margin-top: 0; }
 
-    .lead {
-      margin-top:6px;
-      font-size:16px;
-      color:var(--muted);
-    }
+        .section {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
 
-    nav {
-      margin-top:18px;
-      display:flex;
-      gap:18px;
-      justify-content:center;
-      flex-wrap:wrap;
-    }
+        .card {
+            background: #161b22;
+            border: 1px solid #30363d;
+            padding: 22px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            transition: 0.25s ease;
+        }
 
-    nav a {
-      color:var(--accent);
-      text-decoration:none;
-      font-size:15px;
-    }
+        .card:hover {
+            border-color: #58a6ff;
+            transform: translateY(-2px);
+        }
 
-    nav a:hover {
-      text-decoration:underline;
-    }
+        a {
+            color: #58a6ff;
+            text-decoration: none;
+            transition: 0.2s;
+        }
 
-    main {
-      margin-top:32px;
-      display:grid;
-      gap:24px;
-    }
+        a:hover {
+            text-decoration: underline;
+        }
 
-    .card {
-      padding:24px 26px;
-      border-radius:var(--radius);
-      border:1px solid var(--border);
-      background:var(--card);
-      backdrop-filter:blur(6px);
-      transition:0.22s ease;
-      box-shadow:0 6px 20px rgba(0,0,0,0.28);
-    }
+        footer {
+            text-align: center;
+            opacity: 0.65;
+            padding: 20px;
+            font-size: 14px;
+            margin-top: 20px;
+        }
 
-    .card:hover {
-      transform:translateY(-5px);
-      box-shadow:0 10px 30px rgba(0,0,0,0.45);
-    }
-
-    h2 {
-      margin:0 0 12px 0;
-      font-size:21px;
-      color:var(--accent);
-    }
-
-    ul {
-      margin:0;
-      padding-left:18px;
-      color:var(--muted);
-      line-height:1.55;
-    }
-
-    .blog-preview {
-      margin-top:10px;
-      padding-left:0;
-      list-style:none;
-    }
-
-    .blog-preview li a {
-      color:#e8eef5;
-      text-decoration:none;
-      display:block;
-      padding:10px 0;
-      border-bottom:1px solid rgba(255,255,255,0.06);
-      transition:0.2s;
-    }
-
-    .blog-preview li a:hover {
-      color:var(--accent);
-      transform:translateX(3px);
-    }
-
-    footer {
-      margin-top:40px;
-      text-align:center;
-      font-size:13px;
-      color:var(--muted);
-      opacity:0.75;
-    }
-  </style>
+        ul { padding-left: 20px; }
+    </style>
 </head>
 
 <body>
-  <div class="wrap">
 
     <header>
-      <h1>Lapp</h1>
-      <p class="lead">Cyber Security Learner — Web Security • Network • Linux • OSINT</p>
-
-      <nav>
-        <a href="#about">Giới thiệu</a>
-        <a href="#skills">Kỹ năng</a>
-        <a href="#projects">Dự án</a>
-        <a href="#goals">Mục tiêu</a>
-        <a href="#blog">Blog</a>
-        <a href="#social">Social</a>
-      </nav>
+        <h1>Lapp</h1>
+        <p>Cyber Security Learner • Web Security • Network • Lab Projects</p>
     </header>
 
-    <main>
+    <div class="section">
 
-      <section id="about" class="card">
-        <h2>Giới thiệu</h2>
-        <p>Mình là <strong>Lapp</strong> — người học và thực hành Cyber Security theo hướng Ethical, tập trung vào Web Security, Network, Linux và OSINT.  
-        Mục tiêu: xây dựng nền tảng ATTT vững chắc và chia sẻ kiến thức qua blog để giúp người mới dễ tiếp cận hơn.</p>
-      </section>
+        <div class="card">
+            <h2>Giới thiệu</h2>
+            <p>
+                Tôi là <strong>Lapp</strong>, người học và nghiên cứu các kỹ năng 
+                <strong>Cyber Security cơ bản và trung cấp thấp</strong>.  
+                Tập trung vào: Web Security, Network Fundamentals, và thực hành 
+                các bài lab an toàn trong môi trường mô phỏng.
+            </p>
+        </div>
 
-      <section id="skills" class="card">
-        <h2>Kỹ năng</h2>
-        <ul>
-          <li>Web Security Fundamentals (XSS, CSRF, input validation)</li>
-          <li>Network Fundamentals: TCP/IP, OSI, subnetting</li>
-          <li>Linux & System: permissions, users, shell</li>
-          <li>OSINT Ethical: thu thập thông tin công khai đúng chuẩn</li>
-          <li>Safe Practice: sử dụng lab riêng, VM, không thử nghiệm trái phép</li>
-        </ul>
-      </section>
+        <div class="card">
+            <h2>Kỹ năng</h2>
+            <ul>
+                <li>Web Security Fundamentals (XSS, CSRF awareness, input validation)</li>
+                <li>Kiến thức mạng cơ bản: TCP/IP, OSI, subnetting</li>
+                <li>Linux cơ bản, shell, permission</li>
+                <li>OSINT mức cơ bản – trung bình theo hướng ethical</li>
+                <li>Thực hành lab an toàn (không kiểm thử trái phép)</li>
+            </ul>
+        </div>
 
-      <section id="projects" class="card">
-        <h2>Dự án</h2>
-        <ul>
-          <li>HTTP Security Headers Checker (Python)</li>
-          <li>OWASP Juice Shop Notes / Writeups</li>
-          <li>Network Fundamentals Cheat-sheet</li>
-        </ul>
-      </section>
+        <div class="card">
+            <h2>Dự án Lab</h2>
+            <ul>
+                <li>HTTP Security Headers Checker (Python)</li>
+                <li>Web Security Fundamental Labs (Juice Shop, PortSwigger basic)</li>
+                <li>Network Fundamentals Cheat Sheet</li>
+                <li>Linux Practice Notes (User/Shell/Permissions)</li>
+            </ul>
+        </div>
 
-      <section id="goals" class="card">
-        <h2>Mục tiêu</h2>
-        <ul>
-          <li>Hoàn thiện kiến thức Web Security nâng cao</li>
-          <li>Học OSINT nâng cao và xây dựng tool nhỏ</li>
-          <li>Thực hiện các lab phòng thủ (Blue Team / DFIR basic)</li>
-          <li>Xây dựng blog chia sẻ kiến thức Cyber Security</li>
-        </ul>
-      </section>
+        <div class="card">
+            <h2>Liên hệ (An toàn)</h2>
+            <p>GitHub duy nhất để xem dự án:</p>
+            <p><a href="https://github.com/LappDuck4" target="_blank" rel="noopener noreferrer">github.com/LappDuck4</a></p>
+        </div>
 
-      <section id="blog" class="card">
-        <h2>Blog</h2>
-        <ul class="blog-preview">
-          <li><a href="#">• 5 điều cơ bản cần biết trước khi học Web Security</a></li>
-          <li><a href="#">• Cách kiểm tra HTTP Security Headers (giải thích đơn giản)</a></li>
-          <li><a href="#">• OSINT: Thu thập thông tin an toàn & có đạo đức</a></li>
-        </ul>
-        <p style="margin-top:12px;color:var(--muted);">(* Bạn có thể tạo folder <code>/blog</code> và thêm bài viết sau *)</p>
-      </section>
+    </div>
 
-      <section id="social" class="card">
-        <h2>Social / Nickname</h2>
-        <p>GitHub duy nhất:</p>
-        <p><a href="https://github.com/LappDuck4" target="_blank" rel="noopener noreferrer">github.com/LappDuck4</a></p>
-      </section>
+    <footer>© 2025 – Lapp • Minimal & Secure Portfolio</footer>
 
-    </main>
-
-    <footer>
-      © 2025 — Lapp • Minimal & Secure Blog/Portfolio
-    </footer>
-
-  </div>
 </body>
-</html>
+                                                      </html>

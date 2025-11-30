@@ -2,175 +2,156 @@
 <html lang="vi">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
   <title>Lapp — Cyber Security Learner</title>
 
-  <!-- SEO basics -->
+  <!-- Minimal SEO (không để fingerprint, đủ-index, sạch) -->
+  <meta name="description" content="Cyber Security Learner — Web Security Basics • Network Fundamentals • Linux • OSINT Ethical.">
   <link rel="canonical" href="https://lappduck4.github.io/">
-  <link rel="alternate" hreflang="vi" href="https://lappduck4.github.io/">
-  <meta name="description" content="Lapp — Cyber Security Learner. Kỹ năng: bảo mật web cơ bản, nền tảng mạng & hệ thống, OSINT cơ bản. Xem portfolio & GitHub.">
-  <meta name="keywords" content="Cyber Security, An ninh mạng, Web security, Network fundamentals, OSINT">
   <meta name="robots" content="index, follow">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
 
-  <!-- Open Graph / Twitter -->
-  <meta property="og:locale" content="vi_VN">
-  <meta property="og:type" content="website">
+  <!-- Open Graph (an toàn, không thông tin cá nhân) -->
   <meta property="og:title" content="Lapp — Cyber Security Learner">
-  <meta property="og:description" content="Kỹ năng: bảo mật web cơ bản, nền tảng mạng & hệ thống, OSINT cơ bản.">
+  <meta property="og:description" content="Cyber Security Learner — Skills • Projects • GitHub">
   <meta property="og:url" content="https://lappduck4.github.io/">
-  <meta property="og:image" content="https://lappduck4.github.io/og-cover-optimized.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Lapp — Cyber Security Learner">
-  <meta name="twitter:description" content="Kỹ năng: bảo mật web cơ bản, nền tảng mạng & hệ thống, OSINT cơ bản.">
+  <meta property="og:type" content="website">
 
-  <!-- Best-effort security headers (meta http-equiv used where feasible in static sites) -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; connect-src 'self' https://api.github.com; frame-ancestors 'none';">
+  <!-- Security Headers -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; frame-ancestors 'none'; base-uri 'self'; connect-src 'self'; object-src 'none';">
   <meta http-equiv="X-Frame-Options" content="DENY">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
 
-  <!-- Minimal favicon -->
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-
-  <!-- Structured data (no PII) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Lapp",
-    "description": "Cyber Security Learner focusing on web security basics, network and system fundamentals.",
-    "url": "https://lappduck4.github.io/",
-    "sameAs": ["https://github.com/LappDuck4"]
-  }
-  </script>
-
-  <!-- Inline CSS: modern, clean, responsive -->
   <style>
-    :root{
-      --bg:#071019;
+    :root {
+      --bg:#05090d;
       --card:#0d141a;
-      --muted:#98a6b3;
-      --accent:#56a6ff;
-      --glass: rgba(255,255,255,0.02);
+      --accent:#68a8ff;
+      --muted:#9ba3ad;
       --radius:12px;
-      --maxw:1040px;
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --maxw:900px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
       color-scheme: dark;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),#03111a);color:#e6eef6;-webkit-font-smoothing:antialiased}
-    a{color:var(--accent);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .container{max-width:var(--maxw);margin:28px auto;padding:20px}
-    header{display:flex;flex-direction:column;gap:12px;padding:28px;border-radius:var(--radius);background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border:1px solid rgba(255,255,255,0.03);box-shadow:0 10px 30px rgba(2,6,23,0.6)}
-    .brand{display:flex;gap:14px;align-items:center}
-    .avatar{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,#071a2b,#0b2a45);display:flex;align-items:center;justify-content:center}
-    .avatar svg{width:36px;height:36px;opacity:0.95}
-    h1{font-size:24px;margin:0;font-weight:700}
-    p.lead{margin:0;color:var(--muted);font-size:14px}
-    nav{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
-    nav a{padding:8px 12px;border-radius:999px;background:var(--glass);font-size:13px;border:1px solid rgba(255,255,255,0.02)}
-    main{display:grid;grid-template-columns:1fr;gap:18px;margin-top:18px}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);padding:16px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 8px 20px rgba(2,6,23,0.45)}
-    h2{color:var(--accent);margin:0 0 8px 0;font-size:16px}
-    p.meta{color:var(--muted);margin:0;font-size:14px}
-    ul.clean{padding-left:18px;margin:8px 0;color:var(--muted)}
-    li{margin:8px 0}
-    footer{text-align:center;color:var(--muted);margin-top:20px;font-size:13px;padding-bottom:20px}
-    .right-col{display:flex;flex-direction:column;gap:18px}
-    /* responsive layout */
-    @media(min-width:860px){
-      main{grid-template-columns:1fr 320px;align-items:start}
-      header{padding:34px}
+    body {
+      margin:0;
+      background:linear-gradient(180deg, #05090d, #08131d);
+      color:#e8eef5;
     }
-    /* hover */
-    .card:hover{transform:translateY(-4px);transition:transform .18s ease}
-    /* accessibility */
-    .skip{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
-    .skip:focus{position:static;width:auto;height:auto;margin:8px;border:2px solid var(--accent);padding:6px;border-radius:8px}
+    .wrap {
+      max-width:var(--maxw);
+      margin:auto;
+      padding:28px 20px;
+    }
+    header {
+      padding:24px;
+      border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,0.05);
+      background:rgba(255,255,255,0.02);
+      box-shadow:0 10px 30px rgba(0,0,0,0.45);
+      backdrop-filter:blur(6px);
+    }
+    h1 {
+      margin:0 0 4px 0;
+      font-size:28px;
+      font-weight:700;
+    }
+    p.lead {
+      margin:0;
+      color:var(--muted);
+      font-size:15px;
+    }
+    main {
+      margin-top:24px;
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+    }
+    .card {
+      padding:20px;
+      background:rgba(255,255,255,0.02);
+      border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,0.04);
+      box-shadow:0 6px 20px rgba(0,0,0,0.3);
+    }
+    h2 {
+      margin:0 0 12px 0;
+      font-size:20px;
+      color:var(--accent);
+    }
+    ul {
+      margin:0;
+      padding-left:20px;
+      color:var(--muted);
+    }
+    li {
+      margin:8px 0;
+    }
+    a {
+      color:var(--accent);
+      text-decoration:none;
+    }
+    a:hover {
+      text-decoration:underline;
+    }
+    footer {
+      margin-top:24px;
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+      opacity:0.7;
+    }
+    .card:hover {
+      transform:translateY(-3px);
+      transition:0.18s ease;
+    }
   </style>
 </head>
+
 <body>
-  <a class="skip" href="#content">Bỏ qua header — tới nội dung chính</a>
+  <div class="wrap">
 
-  <div class="container" role="document">
-    <header role="banner" aria-label="Giới thiệu">
-      <div class="brand" aria-hidden="false">
-        <div class="avatar" aria-hidden="true">
-          <!-- neutral SVG avatar -->
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
-            <rect x="0" y="0" width="24" height="24" rx="5" fill="#06121b"/>
-            <path d="M12 8.2a2.4 2.4 0 1 0 0 4.8 2.4 2.4 0 0 0 0-4.8z" stroke="#56a6ff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-            <path d="M6.5 16.2c1.6-2 4.9-2 7 0" stroke="#56a6ff" stroke-width="1.0" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          </svg>
-        </div>
-        <div>
-          <h1>Lapp</h1>
-          <p class="lead">Cyber Security Learner — Web security basics • Network & system fundamentals</p>
-        </div>
-      </div>
-
-      <nav aria-label="Điều hướng chính">
-        <a href="#about">Giới thiệu</a>
-        <a href="#skills">Kỹ năng</a>
-        <a href="#projects">Dự án</a>
-        <a href="https://github.com/LappDuck4" target="_blank" rel="noopener noreferrer">GitHub</a>
-      </nav>
+    <header>
+      <h1>Lapp</h1>
+      <p class="lead">Cyber Security Learner — Web Security • Network • Linux • OSINT</p>
     </header>
 
-    <main id="content" tabindex="-1" role="main" aria-label="Nội dung chính">
-      <section id="left" style="display:flex;flex-direction:column;gap:18px">
-        <article id="about" class="card" aria-labelledby="about-heading">
-          <h2 id="about-heading">Giới thiệu ngắn</h2>
-          <p class="meta">Xin chào — tôi là <strong>Lapp</strong>. Đây là portfolio công khai dành cho học tập & chia sẻ kiến thức an ninh mạng ở mức cơ bản. Trang ưu tiên bảo mật, không tiết lộ thông tin cá nhân.</p>
-        </article>
+    <main>
 
-        <article id="projects" class="card" aria-labelledby="projects-heading">
-          <h2 id="projects-heading">Một vài dự án (ví dụ)</h2>
-          <p class="meta">Dưới đây là các mẫu public bạn có thể liệt kê trong repo GitHub:</p>
-          <ul class="clean" aria-label="Dự án công khai">
-            <li>Script kiểm tra HTTP security headers (Python) — public repo</li>
-            <li>OWASP Juice Shop lab writeups — learning notes</li>
-            <li>Network basics cheat-sheet & sample configs</li>
-          </ul>
-          <p class="meta">Chi tiết & mã nguồn có trên GitHub.</p>
-        </article>
-
-        <article id="contact" class="card" aria-labelledby="contact-heading">
-          <h2 id="contact-heading">Liên hệ an toàn</h2>
-          <p class="meta">Dùng GitHub để trao đổi: <a href="https://github.com/LappDuck4" target="_blank" rel="noopener noreferrer">github.com/LappDuck4</a>.</p>
-          <p class="meta">Để liên hệ riêng tư: tạo email mới chỉ dùng cho học tập & không chia sẻ thông tin cá nhân công khai.</p>
-        </article>
+      <section class="card">
+        <h2>Kỹ năng</h2>
+        <ul>
+          <li>Web Security Fundamentals (XSS, CSRF awareness, input validation)</li>
+          <li>Network Fundamentals (TCP/IP, OSI, subnetting cơ bản)</li>
+          <li>Linux & System Basics (permissions, users, shell)</li>
+          <li>OSINT Ethical (thu thập thông tin công khai đúng chuẩn)</li>
+          <li>Safe Practice: Labs, VMs, no unauthorized testing</li>
+        </ul>
       </section>
 
-      <aside class="right-col" role="complementary" aria-label="Thông tin phụ">
-        <div class="card" id="skills" aria-labelledby="skills-heading">
-          <h2 id="skills-heading">Kỹ năng</h2>
-          <ul class="clean" aria-label="Danh sách kỹ năng">
-            <li>Web Security (Fundamentals): XSS, CSRF awareness, input validation</li>
-            <li>Network Fundamentals: TCP/IP, OSI basics, subnetting (cơ bản)</li>
-            <li>System & Linux basics: file permissions, users, basic shell ops</li>
-            <li>OSINT (ethical, basic): thu thập thông tin công khai có trách nhiệm</li>
-            <li>Safe practice: lab + VM environments, no unauthorized testing</li>
-          </ul>
-        </div>
+      <section class="card">
+        <h2>Dự án đã làm</h2>
+        <ul>
+          <li>HTTP Security Headers Checker (Python)</li>
+          <li>OWASP Juice Shop Notes / Writeups</li>
+          <li>Network Fundamentals Cheat-sheet</li>
+        </ul>
+      </section>
 
-        <div class="card" aria-labelledby="privacy-heading">
-          <h2 id="privacy-heading">Quy tắc bảo mật cá nhân</h2>
-          <ul class="clean" aria-label="Quy tắc bảo mật">
-            <li>Không chia sẻ ngày sinh/thông tin cá nhân nhạy cảm</li>
-            <li>Sử dụng nickname & avatar non-personal</li>
-            <li>Bật 2FA cho GitHub, không commit token</li>
-            <li>Không công khai tools/techniques gây hại ngoài phạm vi học</li>
-          </ul>
-        </div>
-      </aside>
+      <section class="card">
+        <h2>Liên hệ</h2>
+        <p>GitHub duy nhất:</p>
+        <p><a href="https://github.com/LappDuck4" target="_blank" rel="noopener noreferrer">github.com/LappDuck4</a></p>
+      </section>
+
     </main>
 
-    <footer role="contentinfo" class="card" style="margin-top:18px;text-align:center">
-      <div style="font-size:13px;color:var(--muted)">© 2025 Lapp — Cyber Security Learner</div>
+    <footer>
+      © 2025 — Portfolio tối giản & bảo mật
     </footer>
+
   </div>
 </body>
 </html>

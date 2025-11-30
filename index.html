@@ -4,139 +4,166 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Lapp – Cyber Security Learner</title>
+    <title>Lapp – Cyber Security Learner • Web Security • Network • Linux</title>
 
+    <!-- Canonical -->
     <link rel="canonical" href="https://lappduck4.github.io/">
+
+    <!-- Favicon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-    <!-- SEO an toàn -->
-    <meta name="description" content="Lapp – Cyber Security Learner. Kỹ năng bảo mật web, network cơ bản và các dự án lab an toàn. Portfolio tối giản & sạch.">
-    <meta name="keywords" content="Cyber Security, Web Security, Network Security, Pentest Basic, Ethical Hacking">
-    <meta name="author" content="Lapp">
+    <!-- SEO META -->
+    <meta name="description" content="Lapp – Cyber Security Learner, tập trung vào Web Security, Network, Linux và OSINT Ethical. Portfolio tối giản & bảo mật.">
+    <meta name="keywords" content="Lapp Cyber Security, Web Security Learner, Cybersecurity basics, Network fundamentals, Linux security">
     <meta name="robots" content="index, follow">
 
     <!-- Open Graph -->
     <meta property="og:title" content="Lapp – Cyber Security Learner">
-    <meta property="og:description" content="Portfolio Cyber Security — Web Security • Network • Lab Projects">
+    <meta property="og:description" content="Portfolio của Lapp – Web Security • Network • Linux • OSINT Ethical.">
     <meta property="og:url" content="https://lappduck4.github.io/">
     <meta property="og:type" content="website">
 
-    <!-- Schema an toàn (không lộ info cá nhân) -->
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Lapp",
-      "description": "Cyber Security Learner",
+      "description": "Cyber Security Learner • Web Security • Network • Linux • OSINT Ethical.",
       "url": "https://lappduck4.github.io/",
-      "sameAs": ["https://github.com/LappDuck4"]
+      "sameAs": [
+        "https://github.com/LappDuck4"
+      ],
+      "knowsAbout": [
+        "Cyber Security",
+        "Web Security",
+        "Network Security",
+        "Linux System",
+        "OSINT"
+      ],
+      "keywords": ["Lapp Cyber Security", "Cyber Security Learner", "Web Security", "Network Fundamentals"]
     }
     </script>
 
-    <!-- Security headers -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; object-src 'none'; frame-ancestors 'none';">
+    <!-- SECURITY HEADERS -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; connect-src 'self';">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
 
+    <!-- STYLE -->
     <style>
+        :root {
+            --bg: #0a0f14;
+            --card: #11171f;
+            --accent: #61a0ff;
+            --text: #e6edf3;
+            --muted: #9ba3ad;
+            --radius: 14px;
+            font-family: Inter, Arial, sans-serif;
+        }
+
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            background: #0d1117;
-            color: #e6edf3;
+            background: var(--bg);
+            color: var(--text);
             line-height: 1.6;
         }
 
         header {
             text-align: center;
             padding: 45px 20px;
-            background: #161b22;
-            border-bottom: 1px solid #30363d;
+            background: #0f141b;
+            border-bottom: 1px solid #1f2730;
         }
 
-        h1 { margin: 0; font-size: 32px; }
-        h2 { color: #58a6ff; margin-top: 0; }
+        h1 { margin: 0; font-size: 32px; font-weight: bold; }
+        h2 { color: var(--accent); margin-top: 0; font-size: 22px; }
 
-        .section {
+        .container {
             max-width: 900px;
             margin: auto;
             padding: 20px;
         }
 
         .card {
-            background: #161b22;
-            border: 1px solid #30363d;
+            background: var(--card);
+            border: 1px solid #1c2530;
             padding: 22px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            transition: 0.25s ease;
+            border-radius: var(--radius);
+            margin-bottom: 22px;
+            transition: .25s ease;
         }
 
         .card:hover {
-            border-color: #58a6ff;
-            transform: translateY(-2px);
+            border-color: var(--accent);
+            transform: translateY(-3px);
         }
 
-        a {
-            color: #58a6ff;
-            text-decoration: none;
-        }
+        ul { padding-left: 20px; color: var(--muted); }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
 
         footer {
             text-align: center;
-            opacity: 0.7;
-            padding: 20px;
-            margin-top: 20px;
+            opacity: .6;
+            padding: 25px;
+            font-size: 14px;
+            margin-top: 30px;
         }
     </style>
 </head>
 
 <body>
 
-<header>
-    <h1>Lapp</h1>
-    <p>Cyber Security Learner • Web Security • Network • Lab Projects</p>
-</header>
+    <header>
+        <h1>Lapp</h1>
+        <p>Cyber Security Learner — Web Security • Network • Linux • OSINT</p>
+    </header>
 
-<div class="section">
+    <div class="container">
 
-    <div class="card">
-        <h2>Giới thiệu</h2>
-        <p>Tôi là <strong>Lapp</strong>, người học và thực hành Cyber Security theo hướng Ethical.
-        Tập trung vào Web Security, Network, Linux và các lab mô phỏng an toàn.</p>
+        <div class="card">
+            <h2>Giới thiệu</h2>
+            <p>Mình là <strong>Lapp</strong> — người học và thực hành Cyber Security theo hướng Ethical. 
+               Tập trung vào Web Security, Network, Linux và OSINT cơ bản. Mục tiêu: học đúng, làm đúng, 
+               không thử nghiệm trái phép và xây dựng nền tảng ATTT vững chắc.</p>
+        </div>
+
+        <div class="card">
+            <h2>Kỹ năng</h2>
+            <ul>
+                <li>Web Security Fundamentals (XSS, CSRF awareness, input validation)</li>
+                <li>Network Fundamentals (TCP/IP, OSI, subnetting)</li>
+                <li>Linux & System: permissions, users, shell</li>
+                <li>OSINT Ethical: thu thập thông tin công khai đúng chuẩn</li>
+                <li>Safe Practice: dùng lab riêng, VM, không thử nghiệm trái phép</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Dự án</h2>
+            <ul>
+                <li>HTTP Security Headers Checker (Python)</li>
+                <li>OWASP Juice Shop Notes / Writeups</li>
+                <li>Network Fundamentals Cheat-sheet</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Social / Nickname</h2>
+            <p>GitHub duy nhất:</p>
+            <p><a href="https://github.com/LappDuck4">github.com/LappDuck4</a></p>
+        </div>
+
     </div>
 
-    <div class="card">
-        <h2>Kỹ năng</h2>
-        <ul>
-            <li>Web Security Fundamentals (XSS, CSRF, input validation)</li>
-            <li>Kiến thức mạng cơ bản: TCP/IP, OSI, subnetting</li>
-            <li>Linux cơ bản: shell, permission, user</li>
-            <li>OSINT mức cơ bản – trung bình</li>
-            <li>Thực hành lab an toàn (không kiểm thử trái phép)</li>
-        </ul>
-    </div>
-
-    <div class="card">
-        <h2>Dự án Lab</h2>
-        <ul>
-            <li>HTTP Security Headers Checker (Python)</li>
-            <li>Web Security Fundamental Labs (Juice Shop, PortSwigger basic)</li>
-            <li>Network Fundamentals Cheat Sheet</li>
-            <li>Linux Practice Notes (Shell / Permissions)</li>
-        </ul>
-    </div>
-
-    <div class="card">
-        <h2>Liên hệ</h2>
-        <p>GitHub duy nhất để xem code & dự án:</p>
-        <p><a href="https://github.com/LappDuck4">github.com/LappDuck4</a></p>
-    </div>
-
-</div>
-
-<footer>© 2025 – Lapp • Minimal & Secure Portfolio</footer>
+    <footer>
+        © 2025 — Lapp • Minimal & Secure Portfolio
+    </footer>
 
 </body>
 </html>

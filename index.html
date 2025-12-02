@@ -29,23 +29,115 @@
 
   <!-- Styles -->
   <style>
-    :root{--bg:#071018;--card:#0c1318;--accent:#58a6ff;--muted:#9aa6b0;--text:#e6edf3;--r:12px; font-family:Inter,system-ui,Arial,sans-serif}
-    body{margin:0;background:linear-gradient(180deg,#071018,#08121a);color:var(--text);line-height:1.6}
-    .wrap{max-width:940px;margin:32px auto;padding:20px}
-    header{padding:28px;border-radius:14px;background:rgba(255,255,255,0.02);text-align:center}
-    h1{margin:0;font-size:30px}
-    .lead{color:var(--muted);margin-top:6px}
-    nav{margin-top:14px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-    nav a{color:var(--accent);text-decoration:none;font-size:14px}
-    .card{background:var(--card);border:1px solid rgba(255,255,255,0.03);padding:20px;border-radius:var(--r);margin-top:18px}
-    h2{color:var(--accent);margin:0 0 10px 0}
-    ul{margin:0;padding-left:20px;color:var(--muted)}
-    a{color:var(--accent)}
-    footer{text-align:center;color:var(--muted);margin-top:24px;font-size:13px}
-    .entity-note{margin-top:14px;color:var(--muted);font-size:14px}
+    :root {
+      --bg: #070d13;
+      --surface: rgba(255, 255, 255, 0.03);
+      --border: rgba(255, 255, 255, 0.06);
+      --accent: #58a6ff;
+      --text: #e6edf3;
+      --muted: #94a3b8;
+      --radius: 14px;
+      font-family: "Inter", system-ui, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #070d13, #09141d);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    .wrap {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    /* HEADER */
+    header {
+      padding: 36px 24px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      text-align: center;
+      backdrop-filter: blur(8px);
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 42px;
+      font-weight: 700;
+    }
+
+    .lead {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    nav {
+      margin-top: 18px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-size: 15px;
+      color: var(--accent);
+      transition: 0.2s ease;
+    }
+
+    nav a:hover {
+      color: #7bb4ff;
+    }
+
+    /* CARDS */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 26px;
+      border-radius: var(--radius);
+      margin-top: 26px;
+      backdrop-filter: blur(6px);
+    }
+
+    h2 {
+      margin-top: 0;
+      margin-bottom: 14px;
+      color: var(--accent);
+      font-size: 22px;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 22px;
+      color: var(--muted);
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    a { color: var(--accent); }
+
+    /* CONTACT */
+    .contact-item { margin-bottom: 6px; }
+
+    /* FOOTER */
+    footer {
+      margin-top: 32px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
   </style>
 
-  <!-- 🔥 ENTITY SEO — CHUẨN NHẤT CHO GOOGLE -->
+  <!-- JSON-LD (giữ nguyên vì hoàn chỉnh rồi) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -78,45 +170,6 @@
         "publisher": { "@id": "https://lappduck4.github.io/#person" },
         "inLanguage": "vi-VN",
         "description": "Portfolio và dự án lab của Lapp trong lĩnh vực Cyber Security."
-      },
-
-      {
-        "@type": "WebPage",
-        "@id": "https://lappduck4.github.io/#webpage",
-        "url": "https://lappduck4.github.io/",
-        "name": "Lapp — Portfolio",
-        "description": "Portfolio Web Security, Network, Linux, OSINT của Lapp.",
-        "isPartOf": { "@id": "https://lappduck4.github.io/#website" },
-        "primaryImageOfPage": {
-          "@type": "ImageObject",
-          "url": "https://lappduck4.github.io/og-cover.png"
-        },
-        "inLanguage": "vi-VN"
-      },
-
-      {
-        "@type": "ItemList",
-        "@id": "https://lappduck4.github.io/#projects",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "item": {
-              "@type": "CreativeWork",
-              "name": "HTTP Security Headers Checker",
-              "url": "https://github.com/LappDuck4"
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "item": {
-              "@type": "CreativeWork",
-              "name": "OWASP Juice Shop Notes",
-              "url": "https://github.com/LappDuck4"
-            }
-          }
-        ]
       }
     ]
   }
@@ -125,9 +178,11 @@
 </head>
 <body>
   <div class="wrap">
+
     <header>
       <h1>Lapp</h1>
       <p class="lead">Cyber Security Learner — Web Security • Network • Linux • OSINT</p>
+
       <nav>
         <a href="#about">Giới thiệu</a>
         <a href="#skills">Kỹ năng</a>
@@ -157,18 +212,23 @@
       <section id="projects" class="card">
         <h2>Dự án</h2>
         <ul>
-          <li>HTTP Security Headers Checker (Python) — <a href="https://github.com/LappDuck4" rel="noopener">GitHub</a></li>
-          <li>OWASP Juice Shop Notes — <a href="https://github.com/LappDuck4" rel="noopener">GitHub</a></li>
+          <li>HTTP Security Headers Checker (Python) — <a href="https://github.com/LappDuck4">GitHub</a></li>
+          <li>OWASP Juice Shop Notes — <a href="https://github.com/LappDuck4">GitHub</a></li>
         </ul>
       </section>
 
       <section id="contact" class="card">
         <h2>Liên hệ</h2>
-        <p>GitHub chính thức: <a href="https://github.com/LappDuck4" rel="noopener">github.com/LappDuck4</a></p>
+
+        <p class="contact-item">GitHub: <a href="https://github.com/LappDuck4">github.com/LappDuck4</a></p>
+
+        <p class="contact-item">Email: <a href="mailto:monrozan4@gmail.com">monrozan4@gmail.com</a></p>
+
+        <p class="contact-item">TikTok: <strong>rylix05</strong></p>
       </section>
     </main>
 
-    <footer>© 2025 — Lapp • Minimal & Secure Portfolio</footer>
+    <footer>© 2025 — Lapp • Minimal Cyber Portfolio</footer>
   </div>
 </body>
 </html>

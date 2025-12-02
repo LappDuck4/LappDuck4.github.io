@@ -4,20 +4,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <title>Lapp — Cyber Security Learner • Web Security • Network • Linux</title>
+  <title>Lapp — Cyber Security Learner • Web Security • Network • Linux • OSINT</title>
   <link rel="canonical" href="https://lappduck4.github.io/">
   <link rel="icon" href="/favicon.ico">
 
   <!-- Basic SEO -->
-  <meta name="description" content="Lapp — Cyber Security Learner. Portfolio về Web Security, Network Fundamentals, Linux và OSINT Ethical.">
+  <meta name="description" content="Portfolio chính thức của Lapp — Cyber Security Learner. Tập trung vào Web Security, Network, Linux và OSINT Ethical.">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Lapp">
-  <meta name="keywords" content="Lapp, Cyber Security, Web Security, Network, Linux, OSINT, Ethical Hacking">
+  <meta name="keywords" content="Lapp, Cyber Security, Web Security, Network, Linux, OSINT, Ethical Hacker, Portfolio Security">
 
   <!-- OG -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Lapp — Cyber Security Learner">
-  <meta property="og:description" content="Portfolio: Web Security • Network • Linux • OSINT. Ghi chú và dự án lab.">
+  <meta property="og:description" content="Portfolio Web Security, Network, Linux, OSINT và các dự án bảo mật.">
   <meta property="og:url" content="https://lappduck4.github.io/">
   <meta property="og:image" content="https://lappduck4.github.io/og-cover.png">
 
@@ -27,7 +27,7 @@
   <!-- CSP -->
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; object-src 'none'; frame-ancestors 'none';">
 
-  <!-- Styles -->
+  <!-- UI Styles -->
   <style>
     :root {
       --bg: #070d13;
@@ -54,7 +54,6 @@
       padding: 20px;
     }
 
-    /* HEADER */
     header {
       padding: 36px 24px;
       background: var(--surface);
@@ -87,16 +86,13 @@
 
     nav a {
       text-decoration: none;
-      font-size: 15px;
       color: var(--accent);
+      font-size: 15px;
       transition: 0.2s ease;
     }
 
-    nav a:hover {
-      color: #7bb4ff;
-    }
+    nav a:hover { color: #7bb4ff; }
 
-    /* CARDS */
     .card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -113,64 +109,35 @@
       font-size: 22px;
     }
 
-    ul {
-      margin: 0;
-      padding-left: 22px;
-      color: var(--muted);
-    }
-
-    li {
-      margin-bottom: 6px;
-    }
+    ul { margin: 0; padding-left: 22px; color: var(--muted); }
+    li { margin-bottom: 6px; }
 
     a { color: var(--accent); }
 
-    /* CONTACT */
-    .contact-item { margin-bottom: 6px; }
-
-    /* FOOTER */
     footer {
-      margin-top: 32px;
       text-align: center;
-      color: var(--muted);
+      margin-top: 32px;
       font-size: 14px;
+      color: var(--muted);
     }
   </style>
 
-  <!-- JSON-LD (giữ nguyên vì hoàn chỉnh rồi) -->
+  <!-- JSON-LD (SEO Person Schema with birthDate included) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Person",
-        "@id": "https://lappduck4.github.io/#person",
-        "name": "Lapp",
-        "alternateName": ["Lapp Cyber Security", "Lapp Cyber Security Learner"],
-        "jobTitle": "Cyber Security Learner",
-        "description": "Người học và thực hành Cyber Security theo hướng ethical. Tập trung Web Security, Network Fundamentals, Linux và OSINT Ethical.",
-        "url": "https://lappduck4.github.io/",
-        "image": "https://lappduck4.github.io/og-cover.png",
-        "sameAs": ["https://github.com/LappDuck4"],
-        "knowsAbout": [
-          "Cyber Security",
-          "Web Security",
-          "Network Fundamentals",
-          "Linux",
-          "OSINT"
-        ],
-        "inLanguage": "vi-VN"
-      },
-
-      {
-        "@type": "WebSite",
-        "@id": "https://lappduck4.github.io/#website",
-        "url": "https://lappduck4.github.io/",
-        "name": "Lapp — Cyber Security Learner",
-        "publisher": { "@id": "https://lappduck4.github.io/#person" },
-        "inLanguage": "vi-VN",
-        "description": "Portfolio và dự án lab của Lapp trong lĩnh vực Cyber Security."
-      }
+    "@type": "Person",
+    "name": "Lapp",
+    "jobTitle": "Cyber Security Learner",
+    "url": "https://lappduck4.github.io/",
+    "image": "https://lappduck4.github.io/og-cover.png",
+    "birthDate": "2012-10-31",
+    "description": "Người học và thực hành Cyber Security theo hướng ethical, tập trung Web Security, Network, OSINT và Linux.",
+    "sameAs": [
+      "https://github.com/LappDuck4"
+    ],
+    "knowsAbout": [
+      "Cyber Security", "Web Security", "Network Fundamentals", "Linux", "OSINT"
     ]
   }
   </script>
@@ -192,13 +159,19 @@
     </header>
 
     <main>
+
+      <!-- ABOUT -->
       <section id="about" class="card">
         <h2>Giới thiệu</h2>
+
         <p><strong>Lapp</strong> là người học và thực hành <strong>Cyber Security</strong> theo hướng ethical. Tập trung vào <strong>Web Security</strong>, <strong>Network Fundamentals</strong>, <strong>Linux</strong> và <strong>OSINT</strong>.</p>
 
-        <p class="entity-note">Website này là portfolio chính thức của <strong>Lapp</strong> — Cyber Security Learner.</p>
+        <p><strong>Ngày sinh:</strong> 31/10/2012</p>
+
+        <p class="entity-note">Đây là portfolio chính thức của Lapp — Cyber Security Learner.</p>
       </section>
 
+      <!-- SKILLS -->
       <section id="skills" class="card">
         <h2>Kỹ năng</h2>
         <ul>
@@ -209,6 +182,7 @@
         </ul>
       </section>
 
+      <!-- PROJECTS -->
       <section id="projects" class="card">
         <h2>Dự án</h2>
         <ul>
@@ -217,18 +191,21 @@
         </ul>
       </section>
 
+      <!-- CONTACT -->
       <section id="contact" class="card">
         <h2>Liên hệ</h2>
 
-        <p class="contact-item">GitHub: <a href="https://github.com/LappDuck4">github.com/LappDuck4</a></p>
+        <p>GitHub: <a href="https://github.com/LappDuck4">github.com/LappDuck4</a></p>
 
-        <p class="contact-item">Email: <a href="mailto:monrozan4@gmail.com">monrozan4@gmail.com</a></p>
+        <p>Email: <a href="mailto:monrozan4@gmail.com">monrozan4@gmail.com</a></p>
 
-        <p class="contact-item">TikTok: <strong>rylix05</strong></p>
+        <p>TikTok: <strong>rylix05</strong></p>
       </section>
+
     </main>
 
     <footer>© 2025 — Lapp • Minimal Cyber Portfolio</footer>
+
   </div>
 </body>
 </html>

@@ -1,322 +1,273 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lapp</title>
 
-  <title>Lapp — Cyber Security Portfolio</title>
-  <link rel="icon" href="/favicon.ico">
+    <style>
+        :root {
+            --bg1: #060b11;
+            --bg2: #0b1420;
+            --surface: rgba(255,255,255,0.04);
+            --surface-strong: rgba(255,255,255,0.06);
+            --border: rgba(255,255,255,0.10);
+            --accent: #58a6ff;
+            --accent-glow: #73b8ff;
+            --text: #e6edf3;
+            --muted: #94a3b8;
+            --radius: 15px;
+            font-family: "Inter", system-ui, sans-serif;
+        }
 
-  <style>
-    :root {
-      --bg1: #060b11;
-      --bg2: #0b1420;
-      --surface: rgba(255,255,255,0.04);
-      --surface-strong: rgba(255,255,255,0.06);
-      --border: rgba(255,255,255,0.10);
-      --accent: #58a6ff;
-      --accent-glow: #73b8ff;
-      --text: #e6edf3;
-      --muted: #94a3b8;
-      --radius: 15px;
-      font-family: "Inter", system-ui, sans-serif;
-    }
+        body {
+            margin: 0;
+            background: linear-gradient(180deg, var(--bg1), var(--bg2));
+            color: var(--text);
+            line-height: 1.75;
+            overflow-x: hidden;
+        }
 
-    body {
-      margin: 0;
-      background: linear-gradient(180deg, var(--bg1), var(--bg2));
-      color: var(--text);
-      line-height: 1.75;
-      overflow-x: hidden;
-      transition: background 0.4s ease;
-    }
+        .wrap {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+        }
 
-    /* GLOBAL GLOW ON SCROLL */
-    body.scrolled {
-      background: linear-gradient(180deg, #07101b, #0c1b2a);
-    }
+        /* HEADER */
+        header {
+            padding: 60px 30px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            text-align: center;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 0 26px rgba(88,166,255,0.10);
+            transition: 0.3s ease;
+        }
 
-    .wrap {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 20px;
-    }
+        header:hover {
+            border-color: var(--accent);
+            box-shadow: 0 0 42px rgba(88,166,255,0.22);
+            transform: translateY(-2px);
+        }
 
-    /* HEADER */
-    header {
-      padding: 46px 30px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      text-align: center;
-      backdrop-filter: blur(12px);
+        h1 {
+            margin: 0;
+            font-size: 44px;
+            font-weight: 700;
+            letter-spacing: 0.4px;
+            border-bottom: 2px solid var(--accent);
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            padding-bottom: 6px;
+            transition: 0.3s ease;
+        }
 
-      /* neon glow idle */
-      box-shadow: 0 0 26px rgba(88,166,255,0.10);
+        .lead {
+            margin-top: 12px;
+            color: var(--muted);
+            font-size: 18px;
+            min-height: 26px;
+        }
 
-      transition: 0.3s ease;
-    }
+        /* NAV */
+        nav {
+            margin-top: 24px;
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
 
-    /* neon increase on hover */
-    header:hover {
-      border-color: var(--accent);
-      box-shadow: 0 0 42px rgba(88,166,255,0.22);
-      transform: translateY(-2px);
-    }
+        nav a {
+            text-decoration: none;
+            color: var(--accent);
+            font-weight: 500;
+            position: relative;
+            padding-bottom: 4px;
+            transition: 0.25s ease;
+        }
 
-    h1 {
-      margin: 0;
-      font-size: 44px;
-      font-weight: 700;
-      letter-spacing: 0.4px;
+        nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.25s ease;
+        }
 
-      border-bottom: 2px solid var(--accent);
-      width: fit-content;
-      margin-left: auto;
-      margin-right: auto;
-      padding-bottom: 6px;
-      transition: 0.3s ease;
-    }
+        nav a:hover::after {
+            width: 100%;
+        }
 
-    h1:hover {
-      border-color: var(--accent-glow);
-      text-shadow: 0 0 14px rgba(88,166,255,0.25);
-    }
+        /* CARD */
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 28px;
+            border-radius: var(--radius);
+            margin-top: 34px;
+            backdrop-filter: blur(9px);
+            box-shadow: 0 0 22px rgba(88,166,255,0.05);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease, box-shadow 0.3s ease;
+        }
 
-    /* Typewriter */
-    .lead {
-      margin-top: 12px;
-      color: var(--muted);
-      font-size: 18px;
-      min-height: 26px;
-    }
+        .card.reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-    /* NAVIGATION */
-    nav {
-      margin-top: 24px;
-      display: flex;
-      justify-content: center;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
+        .card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 0 32px rgba(88,166,255,0.18);
+            transform: translateY(-3px);
+        }
 
-    nav a {
-      text-decoration: none;
-      color: var(--accent);
-      font-weight: 500;
-      position: relative;
-      padding-bottom: 4px;
-      transition: 0.25s ease;
-    }
+        h2 {
+            margin-top: 0;
+            color: var(--accent);
+            font-size: 24px;
+            border-left: 3px solid var(--accent);
+            padding-left: 10px;
+        }
 
-    /* Neon underline hover */
-    nav a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0%;
-      height: 2px;
-      background: var(--accent);
-      transition: width 0.25s ease;
-    }
+        ul {
+            padding-left: 22px;
+            color: var(--muted);
+        }
 
-    nav a:hover {
-      color: var(--accent-glow);
-    }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: var(--muted);
+            font-size: 14px;
+        }
 
-    nav a:hover::after {
-      width: 100%;
-    }
+        @media(max-width: 600px) {
+            h1 { font-size: 36px; }
+            .lead { font-size: 16px; }
+        }
 
-    /* CARD */
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      padding: 28px;
-      border-radius: var(--radius);
-      margin-top: 34px;
-      backdrop-filter: blur(9px);
-
-      /* neon idle */
-      box-shadow: 0 0 22px rgba(88,166,255,0.05);
-
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.8s ease, transform 0.8s ease, box-shadow 0.3s ease;
-    }
-
-    /* scroll reveal active */
-    .card.reveal {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* neon hover on cards */
-    .card:hover {
-      border-color: var(--accent);
-      box-shadow: 0 0 32px rgba(88,166,255,0.18);
-      transform: translateY(-3px);
-    }
-
-    h2 {
-      margin-top: 0;
-      margin-bottom: 16px;
-      color: var(--accent);
-      font-size: 24px;
-      border-left: 3px solid var(--accent);
-      padding-left: 10px;
-      letter-spacing: 0.3px;
-      transition: 0.3s ease;
-    }
-
-    h2:hover {
-      border-color: var(--accent-glow);
-      text-shadow: 0 0 10px rgba(88,166,255,0.18);
-    }
-
-    ul {
-      padding-left: 22px;
-      color: var(--muted);
-    }
-
-    li {
-      margin-bottom: 10px;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 40px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    /* MOBILE */
-    @media(max-width: 600px) {
-      h1 { font-size: 36px; }
-      .lead { font-size: 16px; }
-      .card { padding: 24px; }
-      nav { gap: 15px; }
-    }
-  </style>
+    </style>
 </head>
 
 <body>
 
-  <div class="wrap">
+<div class="wrap">
 
+    <!-- HEADER -->
     <header>
-      <h1>Lapp</h1>
-      <p class="lead" id="typewriter"></p>
+        <h1>Lapp</h1>
+        <p class="lead" id="typewriter"></p>
 
-      <nav>
-        <a href="#about">Giới thiệu</a>
-        <a href="#skills">Kỹ năng</a>
-        <a href="#projects">Dự án</a>
-        <a href="#contact">Liên hệ</a>
-      </nav>
+        <nav>
+            <a href="#about">Giới thiệu</a>
+            <a href="#skills">Kỹ năng</a>
+            <a href="#projects">Dự án</a>
+            <a href="#contact">Liên hệ</a>
+        </nav>
     </header>
 
-    <main>
-
-      <section id="about" class="card">
+    <!-- ABOUT -->
+    <section id="about" class="card">
         <h2>Giới thiệu</h2>
         <p>
-          Lapp là người học và thực hành Cyber Security theo hướng ethical,
-          tập trung vào Web Security, Network Fundamentals, Linux và OSINT.
+            Lapp là người học và thực hành Cyber Security theo hướng ethical,  
+            tập trung vào Web Security, Network Fundamentals, Linux và OSINT.
         </p>
-      </section>
+    </section>
 
-      <section id="skills" class="card">
+    <!-- SKILLS -->
+    <section id="skills" class="card">
         <h2>Kỹ năng</h2>
         <ul>
-          <li>Web Security Fundamentals</li>
-          <li>Network Fundamentals</li>
-          <li>Linux System Basics</li>
-          <li>OSINT Ethical</li>
+            <li>Web Security Fundamentals</li>
+            <li>Network Fundamentals</li>
+            <li>Linux System Basics</li>
+            <li>OSINT Ethical</li>
         </ul>
-      </section>
+    </section>
 
-      <section id="projects" class="card">
+    <!-- PROJECTS -->
+    <section id="projects" class="card">
         <h2>Dự án</h2>
         <ul>
-          <li>HTTP Security Headers Checker (Python)</li>
-          <li>OWASP Juice Shop Notes</li>
+            <li>HTTP Security Headers Checker (Python)</li>
+            <li>OWASP Juice Shop Notes</li>
         </ul>
-      </section>
+    </section>
 
-      <section id="contact" class="card">
-        <h2>Liên hệ</h2>
+    <!-- CONTACT -->
+    <section id="contact" class="card">
+        <h2>Mạng Xã Hội</h2>
         <p>GitHub: github.com/LappDuck4</p>
         <p>Email: monrozan4@gmail.com</p>
         <p>TikTok: @rylix05</p>
-      </section>
+    </section>
 
-    </main>
+    <footer>
+        © 2025 — Lapp • Cyber Portfolio
+    </footer>
+</div>
 
-    <footer>© 2025 — Lapp • Cyber Portfolio</footer>
-  </div>
-
-  <!-- TYPEWRITER -->
-  <script>
+<!-- TYPEWRITER -->
+<script>
     const words = [
-      "Cyber Security Learner",
-      "Web Security",
-      "Network Fundamentals",
-      "Linux",
-      "OSINT Ethical"
+        "Cyber Security Learner",
+        "Web Security",
+        "Network Fundamentals",
+        "Linux",
+        "OSINT Ethical"
     ];
 
     let i = 0, j = 0, isDel = false;
 
     function typeLoop() {
-      const el = document.getElementById("typewriter");
+        const el = document.getElementById("typewriter");
 
-      if (!isDel) {
-        el.textContent = words[i].slice(0, j++);
-        if (j > words[i].length) {
-          isDel = true;
-          setTimeout(typeLoop, 700);
-          return;
+        if (!isDel) {
+            el.textContent = words[i].slice(0, j++);
+            if (j > words[i].length) {
+                isDel = true;
+                setTimeout(typeLoop, 700);
+                return;
+            }
+        } else {
+            el.textContent = words[i].slice(0, j--);
+            if (j === 0) {
+                isDel = false;
+                i = (i + 1) % words.length;
+            }
         }
-      } else {
-        el.textContent = words[i].slice(0, j--);
-        if (j === 0) {
-          isDel = false;
-          i = (i + 1) % words.length;
-        }
-      }
-      setTimeout(typeLoop, isDel ? 45 : 85);
+        setTimeout(typeLoop, isDel ? 45 : 85);
     }
 
     typeLoop();
-  </script>
+</script>
 
-  <!-- SCROLL REVEAL -->
-  <script>
+<!-- SCROLL REVEAL -->
+<script>
     const cards = document.querySelectorAll(".card");
 
     function reveal() {
-      cards.forEach(c => {
-        const top = c.getBoundingClientRect().top;
-        if (top < window.innerHeight - 80) {
-          c.classList.add("reveal");
-        }
-      });
+        cards.forEach(c => {
+            const top = c.getBoundingClientRect().top;
+            if (top < window.innerHeight - 80) {
+                c.classList.add("reveal");
+            }
+        });
     }
 
     window.addEventListener("scroll", reveal);
     reveal();
-
-    /* BODY BACKGROUND GLOW WHEN SCROLLING */
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 30) {
-        document.body.classList.add("scrolled");
-      } else {
-        document.body.classList.remove("scrolled");
-      }
-    });
-  </script>
+</script>
 
 </body>
 </html>

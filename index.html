@@ -2,38 +2,46 @@
 <html lang="vi">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Lapp — Cyber Security Learner • Web Security • Network • Linux • OSINT</title>
   <link rel="canonical" href="https://lappduck4.github.io/">
   <link rel="icon" href="/favicon.ico">
 
   <!-- Basic SEO -->
-  <meta name="description" content="Portfolio chính thức của Lapp — Cyber Security Learner. Tập trung vào Web Security, Network, Linux và OSINT Ethical.">
+  <meta name="description" content="Portfolio của Lapp — Cyber Security Learner, tập trung Web Security, Network, Linux và OSINT Ethical.">
   <meta name="robots" content="index, follow">
-  <meta name="author" content="Lapp">
-  <meta name="keywords" content="Lapp, Cyber Security, Web Security, Network, Linux, OSINT, Ethical Hacker, Portfolio Security">
 
   <!-- OG -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Lapp — Cyber Security Learner">
-  <meta property="og:description" content="Portfolio Web Security, Network, Linux, OSINT và các dự án bảo mật.">
+  <meta property="og:description" content="Portfolio Web Security, Network, Linux, OSINT và dự án bảo mật.">
   <meta property="og:url" content="https://lappduck4.github.io/">
   <meta property="og:image" content="https://lappduck4.github.io/og-cover.png">
 
-  <!-- Sitemap -->
-  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <!-- CSP (cho phép font + animation) -->
+  <meta http-equiv="Content-Security-Policy"
+    content="
+      default-src 'self';
+      img-src 'self' data:;
+      style-src 'self' 'unsafe-inline';
+      script-src 'self' 'unsafe-inline';
+      object-src 'none';
+      connect-src 'self';
+      frame-ancestors 'none';
+    ">
 
-  <!-- CSP -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; object-src 'none'; frame-ancestors 'none';">
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <!-- UI Styles -->
   <style>
     :root {
-      --bg: #070d13;
-      --surface: rgba(255, 255, 255, 0.03);
-      --border: rgba(255, 255, 255, 0.06);
+      --bg: #06090d;
+      --surface: rgba(255, 255, 255, 0.05);
+      --border: rgba(255, 255, 255, 0.08);
       --accent: #58a6ff;
+      --accent-glow: #7bb4ff;
       --text: #e6edf3;
       --muted: #94a3b8;
       --radius: 14px;
@@ -42,10 +50,16 @@
 
     body {
       margin: 0;
-      background: linear-gradient(180deg, #070d13, #09141d);
+      background: radial-gradient(circle at top, #0d1621, #070d13);
       color: var(--text);
-      line-height: 1.7;
-      font-size: 16px;
+      line-height: 1.75;
+      font-size: 17px;
+      animation: fadeIn 0.8s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .wrap {
@@ -55,32 +69,36 @@
     }
 
     header {
-      padding: 36px 24px;
+      padding: 42px 24px;
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius);
       text-align: center;
-      backdrop-filter: blur(8px);
-      margin-bottom: 28px;
+      backdrop-filter: blur(10px);
+      margin-bottom: 32px;
+      box-shadow: 0 0 22px rgba(88,166,255,0.06);
     }
 
     h1 {
       margin: 0;
-      font-size: 42px;
+      font-size: 46px;
       font-weight: 700;
+      letter-spacing: 1px;
     }
 
-    .lead {
-      margin-top: 8px;
-      color: var(--muted);
-      font-size: 17px;
+    #typewriter {
+      margin-top: 10px;
+      color: var(--accent);
+      font-size: 18px;
+      font-weight: 500;
+      height: 24px;
     }
 
     nav {
-      margin-top: 18px;
+      margin-top: 24px;
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 22px;
       flex-wrap: wrap;
     }
 
@@ -88,59 +106,48 @@
       text-decoration: none;
       color: var(--accent);
       font-size: 15px;
-      transition: 0.2s ease;
+      transition: 0.22s ease;
     }
 
-    nav a:hover { color: #7bb4ff; }
+    nav a:hover {
+      color: var(--accent-glow);
+      text-shadow: 0 0 6px var(--accent-glow);
+      transform: translateY(-2px);
+    }
 
     .card {
       background: var(--surface);
       border: 1px solid var(--border);
-      padding: 26px;
+      padding: 28px;
       border-radius: var(--radius);
-      margin-top: 26px;
-      backdrop-filter: blur(6px);
+      margin-top: 28px;
+      backdrop-filter: blur(8px);
+      transition: 0.25s ease;
+    }
+
+    .card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 20px rgba(88,166,255,0.12);
+      transform: translateY(-3px);
     }
 
     h2 {
       margin-top: 0;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
       color: var(--accent);
-      font-size: 22px;
+      font-size: 24px;
     }
 
     ul { margin: 0; padding-left: 22px; color: var(--muted); }
-    li { margin-bottom: 6px; }
-
-    a { color: var(--accent); }
+    li { margin-bottom: 7px; }
 
     footer {
       text-align: center;
-      margin-top: 32px;
+      margin-top: 36px;
       font-size: 14px;
       color: var(--muted);
     }
   </style>
-
-  <!-- JSON-LD (SEO Person Schema with birthDate included) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Lapp",
-    "jobTitle": "Cyber Security Learner",
-    "url": "https://lappduck4.github.io/",
-    "image": "https://lappduck4.github.io/og-cover.png",
-    "birthDate": "2012-10-31",
-    "description": "Người học và thực hành Cyber Security theo hướng ethical, tập trung Web Security, Network, OSINT và Linux.",
-    "sameAs": [
-      "https://github.com/LappDuck4"
-    ],
-    "knowsAbout": [
-      "Cyber Security", "Web Security", "Network Fundamentals", "Linux", "OSINT"
-    ]
-  }
-  </script>
 
 </head>
 <body>
@@ -148,7 +155,7 @@
 
     <header>
       <h1>Lapp</h1>
-      <p class="lead">Cyber Security Learner — Web Security • Network • Linux • OSINT</p>
+      <div id="typewriter"></div>
 
       <nav>
         <a href="#about">Giới thiệu</a>
@@ -160,52 +167,83 @@
 
     <main>
 
-      <!-- ABOUT -->
       <section id="about" class="card">
         <h2>Giới thiệu</h2>
-
-        <p><strong>Lapp</strong> là người học và thực hành <strong>Cyber Security</strong> theo hướng ethical. Tập trung vào <strong>Web Security</strong>, <strong>Network Fundamentals</strong>, <strong>Linux</strong> và <strong>OSINT</strong>.</p>
-
-        <p><strong>Ngày sinh:</strong> 31/10/2012</p>
-
+        <p><strong>Lapp</strong> là người học và thực hành <strong>Cyber Security</strong> theo hướng ethical. Tập trung Web Security, Network Fundamentals, Linux và OSINT.</p>
         <p class="entity-note">Đây là portfolio chính thức của Lapp — Cyber Security Learner.</p>
       </section>
 
-      <!-- SKILLS -->
       <section id="skills" class="card">
         <h2>Kỹ năng</h2>
         <ul>
-          <li>Web Security Fundamentals (XSS, CSRF, input validation)</li>
-          <li>Network Fundamentals (TCP/IP, OSI, subnetting)</li>
-          <li>Linux (permissions, users, shell)</li>
-          <li>OSINT Ethical</li>
+          <li>Web Security (XSS, CSRF, Input Validation cơ bản)</li>
+          <li>Network Fundamentals (TCP/IP, OSI, subnet basics)</li>
+          <li>Linux (permissions, basic shell)</li>
+          <li>OSINT Ethical — thu thập thông tin hợp pháp</li>
         </ul>
       </section>
 
-      <!-- PROJECTS -->
       <section id="projects" class="card">
         <h2>Dự án</h2>
         <ul>
           <li>HTTP Security Headers Checker (Python) — <a href="https://github.com/LappDuck4">GitHub</a></li>
-          <li>OWASP Juice Shop Notes — <a href="https://github.com/LappDuck4">GitHub</a></li>
+          <li>OWASP Notes — <a href="https://github.com/LappDuck4">GitHub</a></li>
         </ul>
       </section>
 
-      <!-- CONTACT -->
       <section id="contact" class="card">
         <h2>Liên hệ</h2>
-
         <p>GitHub: <a href="https://github.com/LappDuck4">github.com/LappDuck4</a></p>
-
         <p>Email: <a href="mailto:monrozan4@gmail.com">monrozan4@gmail.com</a></p>
-
         <p>TikTok: <strong>@rylix05</strong></p>
       </section>
 
     </main>
 
-    <footer>© 2025 — Lapp • Minimal Cyber Portfolio</footer>
+    <footer>© 2025 — Lapp • Cyber Minimal Portfolio</footer>
 
   </div>
+
+  <!-- Typewriter Effect -->
+  <script>
+    const words = [
+      "Cyber Security Learner",
+      "Web Security",
+      "Network Fundamentals",
+      "Linux Explorer",
+      "OSINT Ethical"
+    ];
+
+    let i = 0;
+    let j = 0;
+    let current = "";
+    let isDeleting = false;
+
+    function typeLoop() {
+      const el = document.getElementById("typewriter");
+
+      if (!isDeleting) {
+        current = words[i].slice(0, j++);
+        el.textContent = current;
+        if (j > words[i].length) {
+          isDeleting = true;
+          setTimeout(typeLoop, 900);
+          return;
+        }
+      } else {
+        current = words[i].slice(0, j--);
+        el.textContent = current;
+        if (j === 0) {
+          isDeleting = false;
+          i = (i + 1) % words.length;
+        }
+      }
+
+      setTimeout(typeLoop, isDeleting ? 50 : 90);
+    }
+
+    typeLoop();
+  </script>
+
 </body>
 </html>

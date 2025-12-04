@@ -1,322 +1,302 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lapp — Cyber Portfolio</title>
 
-  <title>Lapp — Cyber Security Portfolio</title>
-  <link rel="icon" href="/favicon.ico">
+<style>
+/* ======================================================
+   THEME VARIABLES
+====================================================== */
+:root {
+    --bg1: #060b11;
+    --bg2: #0b1420;
+    --surface: rgba(255,255,255,0.04);
+    --surface-strong: rgba(255,255,255,0.09);
+    --border: rgba(255,255,255,0.12);
+    --accent: #58a6ff;
+    --accent-glow: #7bb6ff;
+    --text: #e6edf3;
+    --muted: #9db1ca;
+    --radius: 16px;
+    --shadow-neon: 0 0 24px rgba(88,166,255,0.25);
+    font-family: "Inter", system-ui, sans-serif;
+}
 
-  <style>
-    :root {
-      --bg1: #060b11;
-      --bg2: #0b1420;
-      --surface: rgba(255,255,255,0.04);
-      --surface-strong: rgba(255,255,255,0.06);
-      --border: rgba(255,255,255,0.10);
-      --accent: #58a6ff;
-      --accent-glow: #73b8ff;
-      --text: #e6edf3;
-      --muted: #94a3b8;
-      --radius: 15px;
-      font-family: "Inter", system-ui, sans-serif;
-    }
+/* ======================================================
+   GLOBAL
+====================================================== */
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(180deg, var(--bg1), var(--bg2));
+    color: var(--text);
+    line-height: 1.7;
+    overflow-x: hidden;
+    animation: fadeIn 1.2s ease forwards;
+}
 
-    body {
-      margin: 0;
-      background: linear-gradient(180deg, var(--bg1), var(--bg2));
-      color: var(--text);
-      line-height: 1.75;
-      overflow-x: hidden;
-      transition: background 0.4s ease;
-    }
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
 
-    /* GLOBAL GLOW ON SCROLL */
-    body.scrolled {
-      background: linear-gradient(180deg, #07101b, #0c1b2a);
-    }
+html {
+    scroll-behavior: smooth;
+}
 
-    .wrap {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 20px;
-    }
+.wrap {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
 
-    /* HEADER */
-    header {
-      padding: 46px 30px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      text-align: center;
-      backdrop-filter: blur(12px);
+/* ======================================================
+   HEADER
+====================================================== */
+header {
+    padding: 58px 28px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    text-align: center;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 32px rgba(88,166,255,0.12);
+    transition: 0.35s ease;
+    animation: headBounce 1.4s ease;
+}
 
-      /* neon glow idle */
-      box-shadow: 0 0 26px rgba(88,166,255,0.10);
+@keyframes headBounce {
+    0% { transform: translateY(-16px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
 
-      transition: 0.3s ease;
-    }
+header:hover {
+    border-color: var(--accent);
+    box-shadow: var(--shadow-neon);
+    transform: translateY(-3px);
+}
 
-    /* neon increase on hover */
-    header:hover {
-      border-color: var(--accent);
-      box-shadow: 0 0 42px rgba(88,166,255,0.22);
-      transform: translateY(-2px);
-    }
+h1 {
+    margin: 0;
+    font-size: 44px;
+    font-weight: 700;
+    border-bottom: 2px solid var(--accent);
+    width: fit-content;
+    margin-inline: auto;
+    padding-bottom: 6px;
+}
 
-    h1 {
-      margin: 0;
-      font-size: 44px;
-      font-weight: 700;
-      letter-spacing: 0.4px;
+.lead {
+    font-size: 18px;
+    color: var(--muted);
+    margin-top: 14px;
+    min-height: 26px;
+}
 
-      border-bottom: 2px solid var(--accent);
-      width: fit-content;
-      margin-left: auto;
-      margin-right: auto;
-      padding-bottom: 6px;
-      transition: 0.3s ease;
-    }
+/* ======================================================
+   NAVIGATION
+====================================================== */
+nav {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    gap: 26px;
+    flex-wrap: wrap;
+}
 
-    h1:hover {
-      border-color: var(--accent-glow);
-      text-shadow: 0 0 14px rgba(88,166,255,0.25);
-    }
+nav a {
+    text-decoration: none;
+    color: var(--accent);
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 4px;
+}
 
-    /* Typewriter */
-    .lead {
-      margin-top: 12px;
-      color: var(--muted);
-      font-size: 18px;
-      min-height: 26px;
-    }
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--accent);
+    transition: width .25s ease;
+}
 
-    /* NAVIGATION */
-    nav {
-      margin-top: 24px;
-      display: flex;
-      justify-content: center;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
+nav a:hover::after {
+    width: 100%;
+}
 
-    nav a {
-      text-decoration: none;
-      color: var(--accent);
-      font-weight: 500;
-      position: relative;
-      padding-bottom: 4px;
-      transition: 0.25s ease;
-    }
+/* ======================================================
+   CARD / SECTION
+====================================================== */
+.card {
+    margin-top: 36px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 30px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 22px rgba(88,166,255,0.07);
 
-    /* Neon underline hover */
-    nav a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0%;
-      height: 2px;
-      background: var(--accent);
-      transition: width 0.25s ease;
-    }
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity .85s ease, transform .85s ease, box-shadow .3s ease;
+}
 
-    nav a:hover {
-      color: var(--accent-glow);
-    }
+.card.reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
 
-    nav a:hover::after {
-      width: 100%;
-    }
+.card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 30px rgba(88,166,255,0.18);
+    transform: translateY(-3px);
+}
 
-    /* CARD */
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      padding: 28px;
-      border-radius: var(--radius);
-      margin-top: 34px;
-      backdrop-filter: blur(9px);
+h2 {
+    margin-top: 0;
+    color: var(--accent);
+    font-size: 24px;
+    border-left: 3px solid var(--accent);
+    padding-left: 10px;
+}
 
-      /* neon idle */
-      box-shadow: 0 0 22px rgba(88,166,255,0.05);
+ul { padding-left: 22px; color: var(--muted); }
 
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.8s ease, transform 0.8s ease, box-shadow 0.3s ease;
-    }
+/* ======================================================
+   FOOTER
+====================================================== */
+footer {
+    text-align: center;
+    margin: 50px 0 20px;
+    color: var(--muted);
+    font-size: 14px;
+}
 
-    /* scroll reveal active */
-    .card.reveal {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* neon hover on cards */
-    .card:hover {
-      border-color: var(--accent);
-      box-shadow: 0 0 32px rgba(88,166,255,0.18);
-      transform: translateY(-3px);
-    }
-
-    h2 {
-      margin-top: 0;
-      margin-bottom: 16px;
-      color: var(--accent);
-      font-size: 24px;
-      border-left: 3px solid var(--accent);
-      padding-left: 10px;
-      letter-spacing: 0.3px;
-      transition: 0.3s ease;
-    }
-
-    h2:hover {
-      border-color: var(--accent-glow);
-      text-shadow: 0 0 10px rgba(88,166,255,0.18);
-    }
-
-    ul {
-      padding-left: 22px;
-      color: var(--muted);
-    }
-
-    li {
-      margin-bottom: 10px;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 40px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    /* MOBILE */
-    @media(max-width: 600px) {
-      h1 { font-size: 36px; }
-      .lead { font-size: 16px; }
-      .card { padding: 24px; }
-      nav { gap: 15px; }
-    }
-  </style>
+@media (max-width: 600px) {
+    h1 { font-size: 38px; }
+    .lead { font-size: 16px; }
+}
+</style>
 </head>
 
-<body>
 
-  <div class="wrap">
+
+<body>
+<div class="wrap">
 
     <header>
-      <h1>Lapp</h1>
-      <p class="lead" id="typewriter"></p>
+        <h1>Lapp</h1>
+        <p class="lead" id="typewriter"></p>
 
-      <nav>
-        <a href="#about">Giới thiệu</a>
-        <a href="#skills">Kỹ năng</a>
-        <a href="#projects">Dự án</a>
-        <a href="#contact">Liên hệ</a>
-      </nav>
+        <nav>
+            <a href="#about">Giới thiệu</a>
+            <a href="#skills">Kỹ năng</a>
+            <a href="#projects">Dự án</a>
+            <a href="#social">Mạng xã hội</a>
+        </nav>
     </header>
 
-    <main>
 
-      <section id="about" class="card">
+    <section id="about" class="card">
         <h2>Giới thiệu</h2>
         <p>
-          Lapp là người học và thực hành Cyber Security theo hướng ethical,
-          tập trung vào Web Security, Network Fundamentals, Linux và OSINT.
+            Lapp là người học và thực hành Cyber Security theo hướng ethical,
+            tập trung vào Web Security, Network Fundamentals, Linux và OSINT.
         </p>
-      </section>
+    </section>
 
-      <section id="skills" class="card">
+
+    <section id="skills" class="card">
         <h2>Kỹ năng</h2>
         <ul>
-          <li>Web Security Fundamentals</li>
-          <li>Network Fundamentals</li>
-          <li>Linux System Basics</li>
-          <li>OSINT Ethical</li>
+            <li>Web Security Fundamentals</li>
+            <li>Network Fundamentals</li>
+            <li>Linux System Basics</li>
+            <li>OSINT Ethical</li>
         </ul>
-      </section>
+    </section>
 
-      <section id="projects" class="card">
+
+    <section id="projects" class="card">
         <h2>Dự án</h2>
         <ul>
-          <li>HTTP Security Headers Checker (Python)</li>
-          <li>OWASP Juice Shop Notes</li>
+            <li>HTTP Security Headers Checker (Python)</li>
+            <li>OWASP Juice Shop Notes</li>
         </ul>
-      </section>
+    </section>
 
-      <section id="contact" class="card">
-        <h2>Mạng Xã Hội</h2>
+
+    <section id="social" class="card">
+        <h2>Mạng xã hội</h2>
         <p>GitHub: github.com/LappDuck4</p>
         <p>Email: monrozan4@gmail.com</p>
         <p>TikTok: @rylix05</p>
-      </section>
+    </section>
 
-    </main>
+    <footer>© 2025 — Lapp • Cyber Portfolio</footer>
+</div>
 
-    <footer>© 1/12/2025 — Lapp • Cyber Portfolio</footer>
-  </div>
 
-  <!-- TYPEWRITER -->
-  <script>
-    const words = [
-      "Cyber Security Learner",
-      "Web Security",
-      "Network Fundamentals",
-      "Linux",
-      "OSINT Ethical"
-    ];
+<!-- ======================================================
+     TYPEWRITER EFFECT
+====================================================== -->
+<script>
+const words = [
+    "Cyber Security Learner",
+    "Web Security",
+    "Network Fundamentals",
+    "Linux Enthusiast",
+    "OSINT Ethical"
+];
 
-    let i = 0, j = 0, isDel = false;
+let i = 0, j = 0, isDel = false;
 
-    function typeLoop() {
-      const el = document.getElementById("typewriter");
+function typeLoop() {
+    const el = document.getElementById("typewriter");
 
-      if (!isDel) {
+    if (!isDel) {
         el.textContent = words[i].slice(0, j++);
         if (j > words[i].length) {
-          isDel = true;
-          setTimeout(typeLoop, 700);
-          return;
+            isDel = true;
+            setTimeout(typeLoop, 700);
+            return;
         }
-      } else {
+    } else {
         el.textContent = words[i].slice(0, j--);
         if (j === 0) {
-          isDel = false;
-          i = (i + 1) % words.length;
+            isDel = false;
+            i = (i + 1) % words.length;
         }
-      }
-      setTimeout(typeLoop, isDel ? 45 : 85);
     }
 
-    typeLoop();
-  </script>
+    setTimeout(typeLoop, isDel ? 45 : 85);
+}
+typeLoop();
+</script>
 
-  <!-- SCROLL REVEAL -->
-  <script>
-    const cards = document.querySelectorAll(".card");
 
-    function reveal() {
-      cards.forEach(c => {
-        const top = c.getBoundingClientRect().top;
-        if (top < window.innerHeight - 80) {
-          c.classList.add("reveal");
+<!-- ======================================================
+     SCROLL REVEAL
+====================================================== -->
+<script>
+const cards = document.querySelectorAll(".card");
+
+function reveal() {
+    cards.forEach(card => {
+        if (card.getBoundingClientRect().top < window.innerHeight - 80) {
+            card.classList.add("reveal");
         }
-      });
-    }
-
-    window.addEventListener("scroll", reveal);
-    reveal();
-
-    /* BODY BACKGROUND GLOW WHEN SCROLLING */
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 30) {
-        document.body.classList.add("scrolled");
-      } else {
-        document.body.classList.remove("scrolled");
-      }
     });
-  </script>
+}
+
+window.addEventListener("scroll", reveal);
+window.addEventListener("load", reveal);
+</script>
 
 </body>
 </html>

@@ -64,16 +64,13 @@
         padding: 40px 20px;
     }
 
-    /* HERO */
     .hero {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 90px 0;
     }
-    .hero-left {
-        max-width: 48%;
-    }
+    .hero-left { max-width: 48%; }
 
     .hello { font-size: 28px; color: var(--neon-soft); margin: 0; }
     .name { font-size: 44px; margin: 10px 0 20px; font-weight: 700; }
@@ -99,16 +96,13 @@
         box-shadow: 0 0 12px var(--neon);
     }
 
-    /* LOGO VỊT HACKER */
-    .hero-right {
-        text-align: center;
-        width: 48%;
-    }
-    .hacker-logo {
-        width: 270px;
+    /* LOGO IMAGE */
+    .hero-right { text-align: center; width: 48%; }
+    .duck-logo {
+        width: 340px;
         max-width: 100%;
-        border-radius: 14px;
-        filter: drop-shadow(0 0 20px var(--neon));
+        border-radius: 18px;
+        filter: drop-shadow(0 0 22px var(--neon));
         animation: float 4s ease-in-out infinite;
     }
     @keyframes float {
@@ -117,7 +111,6 @@
         100% { transform: translateY(0px); }
     }
 
-    /* CARD */
     .card {
         background: var(--card);
         padding: 28px;
@@ -140,12 +133,11 @@
         margin-top: 40px;
     }
 
-    /* MOBILE */
     @media(max-width: 780px) {
         .hero { flex-direction: column; }
         .hero-right { width: 100%; margin-top: 35px; }
         .hero-left { text-align: center; max-width: 100%; }
-        .duck-logo { width: 200px; }
+        .duck-logo { width: 260px; }
     }
 </style>
 </head>
@@ -177,8 +169,8 @@
         </div>
 
         <div class="hero-right">
-            <!-- LOGO VỊT HACKER -->
-            <img src="hacker.png" alt="Hacker Duck Logo" class="duck-logo">
+            <!-- LOGO MỚI hacker.png -->
+            <img src="hacker.png" alt="Hacker Logo" class="duck-logo">
         </div>
     </section>
 

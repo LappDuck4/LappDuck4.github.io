@@ -1,180 +1,100 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Lapp — Cyber Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lapp - Portfolio</title>
 
 <style>
     :root {
-        --bg: #020409;
-        --bg2: #0a0f1a;
-        --text: #e6edf3;
-        --neon: #3ea6ff;
-        --neon-soft: #77c7ff;
-        --muted: #9aa9c2;
-        --card: rgba(255,255,255,0.03);
-        --border: rgba(255,255,255,0.08);
-        --radius: 16px;
-        font-family: "Inter", sans-serif;
+        --bg: #0a0a0a;
+        --card: #111;
+        --text: #e0e0e0;
+        --neon: #00ffc8;
+        --neon-soft: #7fffe6;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Consolas", monospace;
     }
 
     body {
-        margin: 0;
-        background: linear-gradient(180deg, var(--bg), var(--bg2));
+        background: var(--bg);
         color: var(--text);
-        overflow-x: hidden;
+        line-height: 1.6;
     }
 
-    /* NAVIGATION */
     nav {
-        padding: 18px 40px;
-        display: flex;
-        justify-content: flex-end;
-        gap: 26px;
-        background: rgba(0,0,0,0.15);
-        position: sticky;
-        top: 0;
-        backdrop-filter: blur(12px);
-        border-bottom: 1px solid var(--border);
-        z-index: 10;
-    }
-    nav a {
-        color: var(--text);
-        opacity: 0.75;
-        text-decoration: none;
-        font-weight: 500;
-        transition: 0.25s;
-        position: relative;
-    }
-    nav a:hover {
-        color: var(--neon);
-        opacity: 1;
-        text-shadow: 0 0 10px var(--neon);
-    }
-    nav a::after {
-        content: "";
-        position: absolute;
-        left: 0; bottom: -4px;
-        width: 0%; height: 2px;
-        background: var(--neon);
-        transition: width .3s;
-    }
-    nav a:hover::after { width: 100%; }
-
-
-    /* WRAPPER */
-    .wrap {
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 40px 20px;
-    }
-
-    /* HERO SECTION */
-    .hero {
         display: flex;
         justify-content: space-between;
-        align-items: center;
-        padding: 90px 0;
+        padding: 20px 5%;
+        backdrop-filter: blur(5px);
+        position: sticky;
+        top: 0;
+        background: rgba(0, 0, 0, 0.4);
+        border-bottom: 1px solid #111;
     }
-    .hero-left { max-width: 48%; }
 
-    .hello {
-        font-size: 28px;
-        color: var(--neon-soft);
-        margin: 0;
-    }
-    .name {
-        font-size: 46px;
-        margin: 10px 0 20px;
-        font-weight: 700;
-    }
-    .highlight {
+    nav a {
         color: var(--neon);
-        text-shadow: 0 0 12px var(--neon);
-    }
-
-    .desc {
-        color: var(--muted);
-        line-height: 1.7;
-        margin-bottom: 25px;
-        max-width: 85%;
-    }
-
-    .btn {
-        padding: 10px 22px;
-        background: var(--neon);
-        color: #000;
-        border-radius: 10px;
         text-decoration: none;
-        font-weight: 600;
+        font-weight: bold;
+        font-size: 18px;
         transition: 0.2s;
     }
-    .btn:hover {
-        background: var(--neon-soft);
-        box-shadow: 0 0 12px var(--neon);
+
+    nav a:hover {
+        text-shadow: 0 0 10px var(--neon);
     }
 
-    .hero-right {
-        text-align: center;
-        width: 48%;
+    .hero {
+        min-height: 70vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 5%;
     }
 
-    .duck-logo {
-        width: 340px;
-        max-width: 100%;
-        border-radius: 18px;
-        animation: float 4s ease-in-out infinite, glow 3s ease-in-out infinite;
-    }
-    @keyframes float {
-        0% { transform: translateY(0px); }
-        50% { transform: translateY(-12px); }
-        100% { transform: translateY(0px); }
-    }
-    @keyframes glow {
-        0% { filter: drop-shadow(0 0 12px var(--neon-soft)); }
-        50% { filter: drop-shadow(0 0 26px var(--neon)); }
-        100% { filter: drop-shadow(0 0 12px var(--neon-soft)); }
+    h1 {
+        font-size: 45px;
+        color: var(--neon);
+        text-shadow: 0 0 15px var(--neon);
     }
 
+    /* Typing text */
+    #typing {
+        color: var(--neon-soft);
+        text-shadow: 0 0 10px var(--neon);
+        font-size: 24px;
+        letter-spacing: 1px;
+    }
 
-    /* CARD SECTIONS */
+    .section {
+        padding: 60px 5%;
+    }
+
     .card {
         background: var(--card);
-        padding: 32px;
-        border-radius: var(--radius);
-        margin-top: 40px;
-        border: 1px solid var(--border);
-        box-shadow: 0 0 20px rgba(0,0,0,0.25);
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #1a1a1a;
+        transition: 0.2s;
     }
-    .card h2 {
-        color: var(--neon);
-        margin-top: 0;
-        margin-bottom: 18px;
-        border-left: 3px solid var(--neon);
-        padding-left: 12px;
-    }
-    .card ul li {
-        color: var(--muted);
-        margin-bottom: 10px;
+
+    .card:hover {
+        border-color: var(--neon);
+        box-shadow: 0 0 10px var(--neon);
     }
 
     footer {
         text-align: center;
-        padding: 30px 0;
-        color: var(--muted);
-        opacity: 0.7;
+        padding: 20px;
+        color: #666;
         font-size: 14px;
-        margin-top: 50px;
-    }
-
-    /* MOBILE FIX */
-    @media(max-width: 780px) {
-        .hero { flex-direction: column; }
-        .hero-right { width: 100%; margin-top: 35px; }
-        .hero-left { text-align: center; max-width: 100%; }
-        .duck-logo { width: 260px; }
-        .desc { max-width: 100%; }
     }
 </style>
 </head>
@@ -182,74 +102,50 @@
 <body>
 
 <nav>
-    <a href="#home">Home</a>
-    <a href="#about">Giới thiệu</a>
-    <a href="#skills">Kỹ năng</a>
-    <a href="#projects">Dự án</a>
-    <a href="#contact">Mạng xã hội</a>
+    <a href="#">LAPP</a>
+    <div>
+        <a href="#">Projects</a>
+        <a href="#" style="margin-left: 15px;">Skills</a>
+        <a href="#" style="margin-left: 15px;">Contact</a>
+    </div>
 </nav>
 
-<div class="wrap">
+<section class="hero">
+    <h1>Lapp</h1>
+    <h2><span id="typing"></span></h2>
+</section>
 
-    <!-- HERO -->
-    <section class="hero" id="home">
-        <div class="hero-left">
-            <h2 class="hello">Hi There,</h2>
-            <h1 class="name">I'm <span class="highlight">Lapp</span></h1>
+<section class="section">
+    <h2>Skills</h2>
+    <div class="card">Nmap, SQLmap, Ping, Whois, Curl, Nslookup</div>
+    <div class="card">Basic Linux Operations</div>
+    <div class="card">CTF Beginner</div>
+</section>
 
-            <p class="desc">
-                I am a Cyber Security learner focusing on Web Security, Network Fundamentals,
-                Linux Systems, and Ethical OSINT. I love building secure and innovative tools.
-            </p>
+<section class="section">
+    <h2>Projects</h2>
+    <div class="card">Port Scanner (Simple Python)</div>
+    <div class="card">Personal Portfolio</div>
+</section>
 
-            <a href="#about" class="btn">About Me</a>
-        </div>
+<footer>
+    © 2025 Lapp – Cybersecurity Learner
+</footer>
 
-        <div class="hero-right">
-            <img src="hacker.png" alt="Hacker Logo" class="duck-logo">
-        </div>
-    </section>
+<script>
+const text = "Hi There, I'm Lapp — Cyber Security Learner..."; 
+let i = 0;
 
-    <!-- ABOUT -->
-    <section class="card" id="about">
-        <h2>Giới thiệu</h2>
-        <p>
-            Lapp là người thực hành Cyber Security theo hướng ethical, tập trung vào Web Security,
-            Network, Linux và OSINT. Mục tiêu là nâng cao kiến thức và tạo các dự án hữu ích.
-        </p>
-    </section>
+function typeEffect() {
+    if (i < text.length) {
+        document.getElementById("typing").innerHTML = text.substring(0, i+1);
+        i++;
+        setTimeout(typeEffect, 70);
+    }
+}
 
-    <!-- SKILLS -->
-    <section class="card" id="skills">
-        <h2>Kỹ năng</h2>
-        <ul>
-            <li>Web Security Fundamentals</li>
-            <li>Network Fundamentals</li>
-            <li>Linux System Basics</li>
-            <li>Ethical OSINT</li>
-        </ul>
-    </section>
-
-    <!-- PROJECTS -->
-    <section class="card" id="projects">
-        <h2>Dự án</h2>
-        <ul>
-            <li>HTTP Security Header Checker – Python</li>
-            <li>OWASP Juice Shop Notes</li>
-        </ul>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="card" id="contact">
-        <h2>Mạng Xã Hội</h2>
-        <p>GitHub: github.com/LappDuck4</p>
-        <p>Email: monrozan4@gmail.com</p>
-        <p>TikTok: @rylix05</p>
-    </section>
-
-    <footer>© 2025 — Lapp • Cyber Portfolio</footer>
-
-</div>
+window.onload = typeEffect;
+</script>
 
 </body>
 </html>

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,61 +16,72 @@
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background-color: #0a0f1c;
-            color: #c9d1d9;
+            background-color: #05080f;
+            color: #e6edf3;
             line-height: 1.6;
         }
 
-        .wrapper {
-            max-width: 1000px;
-            margin: 40px auto;
+        .container {
+            max-width: 1100px;
+            margin: 60px auto;
             border: 2px solid #1f6feb;
-            box-shadow: 0 0 25px rgba(31, 111, 235, 0.4);
+            box-shadow: 0 0 30px rgba(31, 111, 235, 0.35);
         }
 
-        header {
-            text-align: center;
-            padding: 50px 20px;
-            background: linear-gradient(180deg, #0d1117, #0a0f1c);
+        .top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px 50px;
+            background: linear-gradient(180deg, #0b1220, #05080f);
             border-bottom: 1px solid #1f6feb;
         }
 
-        .logo {
-            width: 130px;
-            margin-bottom: 20px;
-            animation: pulse 2.5s infinite;
+        .info {
+            max-width: 600px;
         }
 
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-                filter: drop-shadow(0 0 5px #1f6feb);
-            }
-            50% {
-                transform: scale(1.08);
-                filter: drop-shadow(0 0 20px #1f6feb);
-            }
-            100% {
-                transform: scale(1);
-                filter: drop-shadow(0 0 5px #1f6feb);
-            }
-        }
-
-        header h1 {
-            font-size: 40px;
+        .info h1 {
+            font-size: 42px;
+            letter-spacing: 3px;
             color: #58a6ff;
-            margin-bottom: 10px;
-            letter-spacing: 2px;
+            margin-bottom: 15px;
         }
 
         .typing {
             font-size: 16px;
-            color: #8b949e;
-            height: 22px;
+            color: #9da7b3;
+            min-height: 22px;
+            border-left: 2px solid #1f6feb;
+            padding-left: 10px;
+        }
+
+        .logo-box {
+            flex-shrink: 0;
+        }
+
+        .logo {
+            width: 180px;
+            animation: glow 2.8s infinite;
+        }
+
+        @keyframes glow {
+            0% {
+                transform: scale(1);
+                filter: drop-shadow(0 0 6px #1f6feb);
+            }
+            50% {
+                transform: scale(1.06);
+                filter: drop-shadow(0 0 22px #1f6feb);
+            }
+            100% {
+                transform: scale(1);
+                filter: drop-shadow(0 0 6px #1f6feb);
+            }
         }
 
         main {
-            padding: 50px 40px;
+            padding: 60px 50px;
         }
 
         section {
@@ -86,6 +98,7 @@
 
         section p {
             max-width: 850px;
+            color: #c9d1d9;
         }
 
         ul {
@@ -99,32 +112,52 @@
         footer {
             text-align: center;
             padding: 20px;
-            background-color: #0d1117;
+            background-color: #05080f;
             border-top: 1px solid #1f6feb;
-            color: #8b949e;
             font-size: 14px;
+            color: #9da7b3;
+        }
+
+        @media (max-width: 900px) {
+            .top {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .logo {
+                margin-bottom: 30px;
+            }
+
+            .typing {
+                border-left: none;
+                padding-left: 0;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="wrapper">
+    <div class="container">
 
-        <header>
-            <img src="hacker.png" alt="Logo" class="logo">
-            <h1>LAPP</h1>
-            <div class="typing" id="typing"></div>
-        </header>
+        <div class="top">
+            <div class="info">
+                <h1>LAPP</h1>
+                <div class="typing" id="typing"></div>
+            </div>
+
+            <div class="logo-box">
+                <img src="hacker.png" alt="Logo" class="logo">
+            </div>
+        </div>
 
         <main>
-
             <section>
                 <h2>Profile</h2>
                 <p>
                     My name is Lapp, born in 2012. I am focused on Cyber Security,
-                    with an emphasis on understanding real-world attack techniques
-                    and defensive fundamentals. I maintain discipline and consistency
-                    through Armwrestling and Calisthenics training.
+                    continuously building a strong foundation in offensive and
+                    defensive security. I maintain discipline and consistency
+                    through Armwrestling and Calisthenics.
                 </p>
             </section>
 
@@ -151,7 +184,6 @@
                 <p>GitHub: monrozan4@gmail.com</p>
                 <p>Email: lapthubao145@gmail.com</p>
             </section>
-
         </main>
 
         <footer>
@@ -161,19 +193,44 @@
     </div>
 
     <script>
-        const text = "Cyber Security Enthusiast | Penetration Testing | OSINT | Web Security";
-        const typingElement = document.getElementById("typing");
-        let index = 0;
+        const texts = [
+            "Cyber Security Enthusiast",
+            "Penetration Testing",
+            "OSINT Research",
+            "Web Application Security"
+        ];
 
-        function typeEffect() {
-            if (index < text.length) {
-                typingElement.textContent += text.charAt(index);
-                index++;
-                setTimeout(typeEffect, 60);
+        const typingElement = document.getElementById("typing");
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function typeLoop() {
+            const currentText = texts[textIndex];
+
+            if (!isDeleting && charIndex <= currentText.length) {
+                typingElement.textContent = currentText.substring(0, charIndex);
+                charIndex++;
+            } else if (isDeleting && charIndex >= 0) {
+                typingElement.textContent = currentText.substring(0, charIndex);
+                charIndex--;
             }
+
+            if (charIndex === currentText.length) {
+                isDeleting = true;
+                setTimeout(typeLoop, 1200);
+                return;
+            }
+
+            if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % texts.length;
+            }
+
+            setTimeout(typeLoop, isDeleting ? 40 : 70);
         }
 
-        typeEffect();
+        typeLoop();
     </script>
 
 </body>
